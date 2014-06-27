@@ -257,6 +257,14 @@
 		51F704941862CA8F00A17D24 /* UserProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F704931862CA8F00A17D24 /* UserProfileView.m */; };
 		51F704961862CAAA00A17D24 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F704951862CAAA00A17D24 /* UserProfileView.xib */; };
 		51FD8A5F1892B29B00963987 /* SetupUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FD8A5E1892B29B00963987 /* SetupUserController.m */; };
+		84055EB2195C101C008DCFA6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 84055EB1195C101C008DCFA6 /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84611BA0195BC85800070BA8 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84611B93195BC85800070BA8 /* libBPush.a */; };
+		84611BA2195BC85800070BA8 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B99195BC85800070BA8 /* GzipCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84611BA3195BC85800070BA8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9B195BC85800070BA8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84611BA4195BC85800070BA8 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9D195BC85800070BA8 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84BB9BFE195BAA7F00D39DA5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BB9BFD195BAA7F00D39DA5 /* CoreTelephony.framework */; };
+		84BB9C00195BAA9900D39DA5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BB9BFF195BAA9900D39DA5 /* libz.dylib */; };
+		84BB9C02195BB34400D39DA5 /* BPushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BB9C01195BB34400D39DA5 /* BPushConfig.plist */; };
 		E202E12816E0D7B400FDBD34 /* Insurance4ColumnsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E202E12716E0D7B400FDBD34 /* Insurance4ColumnsCell.m */; };
 		E202E12B16E0D7D100FDBD34 /* Insurance4ColumnsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E202E12A16E0D7D100FDBD34 /* Insurance4ColumnsCell.xib */; };
 		E202E12E16E0DC4300FDBD34 /* InsuranceFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E202E12D16E0DC4300FDBD34 /* InsuranceFooterView.m */; };
@@ -888,6 +896,20 @@
 		51F704951862CAAA00A17D24 /* UserProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
 		51FD8A5D1892B29B00963987 /* SetupUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupUserController.h; sourceTree = "<group>"; };
 		51FD8A5E1892B29B00963987 /* SetupUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupUserController.m; sourceTree = "<group>"; };
+		84055EB0195C101C008DCFA6 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		84055EB1195C101C008DCFA6 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		84611B92195BC85800070BA8 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
+		84611B93195BC85800070BA8 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
+		84611B97195BC85800070BA8 /* Base64Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Defines.h; sourceTree = "<group>"; };
+		84611B98195BC85800070BA8 /* GzipCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GzipCompressor.h; sourceTree = "<group>"; };
+		84611B99195BC85800070BA8 /* GzipCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GzipCompressor.m; sourceTree = "<group>"; };
+		84611B9A195BC85800070BA8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		84611B9B195BC85800070BA8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		84611B9C195BC85800070BA8 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		84611B9D195BC85800070BA8 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		84BB9BFD195BAA7F00D39DA5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		84BB9BFF195BAA9900D39DA5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		84BB9C01195BB34400D39DA5 /* BPushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BPushConfig.plist; sourceTree = "<group>"; };
 		E202E12616E0D7B400FDBD34 /* Insurance4ColumnsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Insurance4ColumnsCell.h; sourceTree = "<group>"; };
 		E202E12716E0D7B400FDBD34 /* Insurance4ColumnsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Insurance4ColumnsCell.m; sourceTree = "<group>"; };
 		E202E12A16E0D7D100FDBD34 /* Insurance4ColumnsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Insurance4ColumnsCell.xib; sourceTree = "<group>"; };
@@ -1245,6 +1267,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BB9C00195BAA9900D39DA5 /* libz.dylib in Frameworks */,
+				84BB9BFE195BAA7F00D39DA5 /* CoreTelephony.framework in Frameworks */,
 				51C5E03918F0549B00208F22 /* Security.framework in Frameworks */,
 				5180020318A27B42006539BA /* MessageUI.framework in Frameworks */,
 				51B9953C18913AE200C2DD5D /* AlipayRsaLib.a in Frameworks */,
@@ -1253,6 +1277,7 @@
 				51B9954318913B3F00C2DD5D /* libcrypto.a in Frameworks */,
 				E2611B7D17CB7C4200E92897 /* CoreLocation.framework in Frameworks */,
 				E2F2881116F593B400DAE1B8 /* QuartzCore.framework in Frameworks */,
+				84611BA0195BC85800070BA8 /* libBPush.a in Frameworks */,
 				E2EE65F016CD117800ED1C73 /* SystemConfiguration.framework in Frameworks */,
 				E2EE658416C6863D00ED1C73 /* CoreData.framework in Frameworks */,
 				E2296D2A16B760EC00E332D9 /* UIKit.framework in Frameworks */,
@@ -1719,6 +1744,32 @@
 			name = Users;
 			sourceTree = "<group>";
 		};
+		84611B91195BC85800070BA8 /* BaiduPush */ = {
+			isa = PBXGroup;
+			children = (
+				84611B92195BC85800070BA8 /* BPush.h */,
+				84611B93195BC85800070BA8 /* libBPush.a */,
+				84611B94195BC85800070BA8 /* opensource */,
+			);
+			path = BaiduPush;
+			sourceTree = "<group>";
+		};
+		84611B94195BC85800070BA8 /* opensource */ = {
+			isa = PBXGroup;
+			children = (
+				84055EB0195C101C008DCFA6 /* Base64.h */,
+				84055EB1195C101C008DCFA6 /* Base64.m */,
+				84611B97195BC85800070BA8 /* Base64Defines.h */,
+				84611B98195BC85800070BA8 /* GzipCompressor.h */,
+				84611B99195BC85800070BA8 /* GzipCompressor.m */,
+				84611B9A195BC85800070BA8 /* JSONKit.h */,
+				84611B9B195BC85800070BA8 /* JSONKit.m */,
+				84611B9C195BC85800070BA8 /* OpenUDID.h */,
+				84611B9D195BC85800070BA8 /* OpenUDID.m */,
+			);
+			path = opensource;
+			sourceTree = "<group>";
+		};
 		E2296D1A16B760EC00E332D9 = {
 			isa = PBXGroup;
 			children = (
@@ -1740,6 +1791,8 @@
 		E2296D2816B760EC00E332D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BB9BFF195BAA9900D39DA5 /* libz.dylib */,
+				84BB9BFD195BAA7F00D39DA5 /* CoreTelephony.framework */,
 				51C5E03818F0549B00208F22 /* Security.framework */,
 				511567D718A2963F00784878 /* libWeiboSDK.a */,
 				511567D818A2963F00784878 /* WeiboSDK.bundle */,
@@ -1766,6 +1819,7 @@
 		E2296D2F16B760EC00E332D9 /* EasyDrive366 */ = {
 			isa = PBXGroup;
 			children = (
+				84611B91195BC85800070BA8 /* BaiduPush */,
 				517CE3DB193AC5D4001A2DE2 /* MainTab */,
 				516C6434191CAF190035733B /* Uppay */,
 				518001FE18A27421006539BA /* Share */,
@@ -1819,6 +1873,7 @@
 				E2296D3516B760EC00E332D9 /* main.m */,
 				E2296D3716B760EC00E332D9 /* EasyDrive366-Prefix.pch */,
 				E2296D3F16B760EC00E332D9 /* Default-568h@2x.png */,
+				84BB9C01195BB34400D39DA5 /* BPushConfig.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2462,7 +2517,7 @@
 				ORGANIZATIONNAME = "Fu Steven";
 				TargetAttributes = {
 					E2296D2416B760EC00E332D9 = {
-						DevelopmentTeam = 2854GMH9JF;
+						DevelopmentTeam = F7F929873M;
 					};
 				};
 			};
@@ -2627,6 +2682,7 @@
 				E212279A16FA069B00B494E0 /* 0051@2x.png in Resources */,
 				51ED89D8191A63D200E7F1FE /* wodejifen.png in Resources */,
 				E212279D16FA06D200B494E0 /* 0228.png in Resources */,
+				84BB9C02195BB34400D39DA5 /* BPushConfig.plist in Resources */,
 				51B0D65118BDCF3A00F3B33F /* InsuranceListCell.xib in Resources */,
 				E212279E16FA06D200B494E0 /* 0228@2x.png in Resources */,
 				E23BA0E317215E910049D2CB /* SwitchCell.xib in Resources */,
@@ -2851,6 +2907,7 @@
 				5189CB62186415CB00DB9A26 /* FriendListCell.m in Sources */,
 				E26460D416EF64D80050BDA4 /* InfoAndPriceCell.m in Sources */,
 				E26460E316F094DE0050BDA4 /* WelcomeViewController.m in Sources */,
+				84611BA2195BC85800070BA8 /* GzipCompressor.m in Sources */,
 				E26460F316F1F4CE0050BDA4 /* SVProgressHUD.m in Sources */,
 				E26460FC16F1F96D0050BDA4 /* NVUIGradientButton.m in Sources */,
 				51591F7B18EAE7EE00980A21 /* UserProfileController.m in Sources */,
@@ -2897,6 +2954,7 @@
 				51F0A66A187BD81700CC9A1D /* OrderPayController.m in Sources */,
 				514C90E718954047007FFFCC /* InsuranceStep3Controller.m in Sources */,
 				E2611B8E17CE090F00E92897 /* NavigationViewController.mm in Sources */,
+				84611BA4195BC85800070BA8 /* OpenUDID.m in Sources */,
 				E2611B9217CF345600E92897 /* NewActivateViewController.m in Sources */,
 				51A20ACB18B4E59E008054C4 /* OrderContentController.m in Sources */,
 				E2611B9517CF534100E92897 /* ActivateHeader.m in Sources */,
@@ -2907,6 +2965,8 @@
 				E2E6689217DF664800AC85BA /* mask.c in Sources */,
 				E2E6689317DF664800AC85BA /* QRCodeGenerator.m in Sources */,
 				51160F7B1861D92F00AA15D3 /* CommentListCell.m in Sources */,
+				84055EB2195C101C008DCFA6 /* Base64.m in Sources */,
+				84611BA3195BC85800070BA8 /* JSONKit.m in Sources */,
 				E2E6689417DF664800AC85BA /* qrencode.c in Sources */,
 				E2E6689517DF664800AC85BA /* qrinput.c in Sources */,
 				51B9953218913AC900C2DD5D /* SBJsonParser.m in Sources */,
@@ -3051,16 +3111,16 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					/Users/stevenfu/Documents/workspace/EasyDrive365/EasyDrive365,
-					/Users/stevenfu/Documents/workspace/EasyDrive365,
+					"/Users/admin/谭海峰/易驾366/IOS/EasyDrive366_IOS/EasyDrive366_IOS/EasyDrive365",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/EasyDrive365",
+					"/Users/admin/谭海峰/易驾366/IOS/EasyDrive366_IOS/EasyDrive366_IOS/EasyDrive365/BaiduPush",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EasyDrive366;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -3080,16 +3140,16 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					/Users/stevenfu/Documents/workspace/EasyDrive365/EasyDrive365,
-					/Users/stevenfu/Documents/workspace/EasyDrive365,
+					"/Users/admin/谭海峰/易驾366/IOS/EasyDrive366_IOS/EasyDrive366_IOS/EasyDrive365",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/EasyDrive365",
+					"/Users/admin/谭海峰/易驾366/IOS/EasyDrive366_IOS/EasyDrive366_IOS/EasyDrive365/BaiduPush",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EasyDrive366;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

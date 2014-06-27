@@ -22,17 +22,15 @@
 #import "WelcomeViewController.h"
 #import "WXApi.h"
 #import "WeiboSDK.h"
-
-
 #import "ProviderDetailController.h"
 #import "GoodsDetailController.h"
-
 //main tab
 #import "RecommentsController.h"
 #import "GoodsCategoryController.h"
 #import "MineController.h"
 #import "MoreSettingsController.h"
-
+#import "BPush.h"
+#import "JSONKit.h"
 
 #define TAG_HOMEPAGE 0
 #define TAG_INSURANCE 1
@@ -47,14 +45,13 @@
     UINavigationController *menu2;
     UINavigationController *menu3;
     UINavigationController *menu4;
-
-    
 }
 @end
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     //[[AppSettings sharedSettings] get_latest];
     //百度地图相关
     _mapManager = [[BMKMapManager alloc] init];  //old:1680f38dadab9089d45bedcca6080876
@@ -64,7 +61,9 @@
     }
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+   
+//    //推送
+//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
    
     //若app由远程通知启动 则做一些处理
     if (launchOptions!=nil){
@@ -88,6 +87,19 @@
     self.window.rootViewController = _tabbarController;
     [self.window makeKeyAndVisible];
     
+    
+    //百度推送
+    [BPush setupChannel:launchOptions];
+    [BPush setDelegate:self]; // 必须。参数对象必须实现onMethod: response:方法，本示例中为self
+    
+    // [BPush setAccessToken:@"3.ad0c16fa2c6aa378f450f54adb08039.2592000.1367133742.282335-602025"];  // 可选。api key绑定时不需要，也可在其它时机调用
+    
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeAlert
+     | UIRemoteNotificationTypeBadge
+     | UIRemoteNotificationTypeSound];
+    
+
     //注册 用户退出的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout) name:@"logout" object:nil];
     //注册 用户购买成功 返回首页的通知
@@ -119,6 +131,83 @@
         [self createControllers];
     }
     return YES;
+}
+
+/**
+ *  获取deviceToken
+ *
+ *  @param application <#application description#>
+ *  @param deviceToken <#deviceToken description#>
+ */
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+     [AppSettings sharedSettings].deviceToken=[deviceToken description];
+    
+    [BPush registerDeviceToken:deviceToken];
+    [BPush bindChannel];
+}
+
+/**
+ *  注册token失败
+ *
+ *  @param application <#application description#>
+ *  @param error       <#error description#>
+ */
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"Failed to get token,error:%@",error);
+}
+
+
+/**
+ *如果正确调用了 setDelegate,在 bindChannel 之后,结果在这个回调中返回。 若绑定失败,请进行重新绑定,确保至少绑定成功一次
+ *
+ *  @param method <#method description#>
+ *  @param data   <#data description#>
+ */
+- (void) onMethod:(NSString*)method response:(NSDictionary*)data {
+    NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
+    if ([BPushRequestMethod_Bind isEqualToString:method]) {
+        NSString *appid = [res valueForKey:BPushRequestAppIdKey];
+        NSString *userid = [res valueForKey:BPushRequestUserIdKey];
+        NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
+//        NSString *requestid = [res valueForKey:BPushRequestRequestIdKey];
+        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
+    
+        if (returnCode == BPushErrorCode_Success) {
+            NSLog(@"appid=%@",appid);
+             NSLog(@"appid=%@",channelid);
+             NSLog(@"appid=%@",userid);
+           
+        }
+    } else if ([BPushRequestMethod_Unbind isEqualToString:method]) {
+        NSLog(@"解除绑定");
+        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
+        if (returnCode == BPushErrorCode_Success) {
+        }
+    }
+
+}
+
+
+/**
+ *  接收到通知
+ *
+ *  @param application
+ *  @param userInfo    <#userInfo description#>
+ */
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+   
+    NSString *alert = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+    if (application.applicationState == UIApplicationStateActive) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通知"
+                                                            message:[NSString stringWithFormat:@"收到一条最新消息:\n%@", alert]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+
 }
 
 /**
@@ -247,6 +336,10 @@
     [menu1 popToRootViewControllerAnimated:YES];
     [menu2 popToRootViewControllerAnimated:YES];
     [menu3 popToRootViewControllerAnimated:YES];
+   
+    //取消绑定  不接收通知
+    [BPush unbindChannel];
+    
 }
 
 -(void)setup_display{
@@ -295,39 +388,39 @@
 }
 
 
-
-#pragma mark - 推送
-
-/**
- *  注册token
- *
- *  @param application <#application description#>
- *  @param deviceToken <#deviceToken description#>
- */
--(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    [AppSettings sharedSettings].deviceToken=[deviceToken description];
-}
-
-/**
- *  注册token失败
- *
- *  @param application <#application description#>
- *  @param error       <#error description#>
- */
--(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    NSLog(@"Failed to get token,error:%@",error);
-}
-
-/**
- *  接收到通知
- *
- *  @param application <#application description#>
- *  @param userInfo    <#userInfo description#>
- */
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
-    [self addMessageFromRemoteNotification:userInfo];
-}
+//
+//#pragma mark - 推送
+//
+///**
+// *  注册token
+// *
+// *  @param application <#application description#>
+// *  @param deviceToken <#deviceToken description#>
+// */
+//-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+//    [AppSettings sharedSettings].deviceToken=[deviceToken description];
+//}
+//
+///**
+// *  注册token失败
+// *
+// *  @param application <#application description#>
+// *  @param error       <#error description#>
+// */
+//-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+//    NSLog(@"Failed to get token,error:%@",error);
+//}
+//
+///**
+// *  接收到通知
+// *
+// *  @param application <#application description#>
+// *  @param userInfo    <#userInfo description#>
+// */
+//-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+//    
+//    [self addMessageFromRemoteNotification:userInfo];
+//}
 
 /**
  *  处理接收到的通知
@@ -433,11 +526,11 @@
 }
 
 -(void)onReq:(BaseReq *)req{
-    NSLog(@"%@",req);
+//    NSLog(@"%@",req);
 }
 
 -(void)onResp:(BaseResp *)resp{
-    NSLog(@"%@",resp);
+//    NSLog(@"%@",resp);
     
     if ([resp isKindOfClass:[PayResp class]]){
         PayResp *response = (PayResp *)resp;
@@ -456,11 +549,11 @@
 }
 
 -(void)didReceiveWeiboRequest:(WBBaseRequest *)request{
-    NSLog(@"%@",request);
+//    NSLog(@"%@",request);
 }
 
 -(void)didReceiveWeiboResponse:(WBBaseResponse *)response{
-    NSLog(@"%@",response);
+//    NSLog(@"%@",response);
 }
 
 

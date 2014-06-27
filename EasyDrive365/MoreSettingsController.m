@@ -297,6 +297,12 @@
         }
     }
 }
+
+/**
+ *  点击注销按钮     发送注销广播
+ *
+ *  @param button <#button description#>
+ */
 -(void)buttonPressed:(NVUIGradientButton *)button{
     [self.navigationController popViewControllerAnimated:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"logout" object:nil];

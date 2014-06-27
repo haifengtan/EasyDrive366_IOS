@@ -142,18 +142,21 @@
 
 
 -(void)setDeviceToken:(NSString *)deviceToken{
-  
     _deviceToken=[[deviceToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"deviceToken=%@",_deviceToken);
+//    NSLog(@"deviceToken=%@",_deviceToken);
     [self register_device_token];
 }
+
+/**
+ *  用户跟token绑定
+ */
 -(void)register_device_token
 {
     if (self.userid && self.userid>0 && _deviceToken){
         HttpClient *http = [HttpClient sharedHttp];
         NSString *url = [NSString stringWithFormat:@"pushapi/add_device?userid=%d&device_token=%@&udid=%@",self.userid,_deviceToken,[self udid]];
         [http get:url block:^(id json) {
-            NSLog(@"%@",json);
+//            NSLog(@"%@",json);
         }];
     }
 }
@@ -327,7 +330,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"NavigationCell_%@",keyname] object:infor];
             
         }else{
-            NSLog(@"%@",json);
+//            NSLog(@"%@",json);
             //get nothing from server;
         }
     }];
@@ -351,7 +354,7 @@
     }
     id item = @{@"username":username,@"password":password,@"remember":rememberPassword};
     [_list addObject:item];
-    NSLog(@"%@",_list);
+//    NSLog(@"%@",_list);
     [self save];
 }
 -(NSMutableArray *)get_logins{
