@@ -48,7 +48,14 @@
         vc.ins_data = json[@"result"];
         vc.hasBack = hasBack;
         [controller pushViewController:vc animated:YES];
+    }else if ([next_form isEqualToString:@"add_pingan_yiwaixian"]){
+        //完善平安意外险信息
+        OrderAccidentController *vc =[[OrderAccidentController alloc] initWithStyle:UITableViewStyleGrouped];
+        vc.ins_data = json[@"result"];
+        vc.hasBack = hasBack;
+        [controller pushViewController:vc animated:YES];
     }
+    
 }
 -(void)pushToNext:(UINavigationController *)controller order_id:(NSString *)order_id{
     NSString *url =[NSString stringWithFormat:@"order/order_exform?userid=%d&orderid=%@",[AppSettings sharedSettings].userid,order_id];
