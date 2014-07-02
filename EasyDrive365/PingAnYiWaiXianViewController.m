@@ -7,8 +7,15 @@
 //
 
 #import "PingAnYiWaiXianViewController.h"
+#import "AppSettings.h"
+#import "OrderFinishedController.h"
 
-@interface PingAnYiWaiXianViewController ()
+@interface PingAnYiWaiXianViewController (){
+    UITextField *_txtName;
+    UITextField *_txtId;
+    UITextField *_txtPhone;
+    UITextField *_txtAddress;
+}
 
 @end
 
@@ -26,12 +33,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.title = @"配送信息";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleBordered target:self action:@selector(finished)];
+}
+-(void)finished{
+    return;
+    //complete
+    NSLog(@"%@",self.ins_data);
+    if([@"" isEqualToString:self.ins_data[@"name"]]){
+        [[[UIAlertView alloc] initWithTitle:AppTitle message:@"姓名不能为空！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
+        return;
+        
+    }
+    if([@"" isEqualToString:self.ins_data[@"idcard"]]){
+        [[[UIAlertView alloc] initWithTitle:AppTitle message:@"身份证号码不能为空！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
+        return;
+        
+    }
+    if([@"" isEqualToString:self.ins_data[@"phone"]]){
+        [[[UIAlertView alloc] initWithTitle:AppTitle message:@"手机号码不能为空！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
+        return;
+        
+    }
+    if([@"" isEqualToString:self.ins_data[@"address"]]){
+        [[[UIAlertView alloc] initWithTitle:AppTitle message:@"地址不能为空！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
+        return;
+        
+    }
+    NSString *url = [NSString stringWithFormat:@"order/order_ins_content?userid=%d&orderid=%@&name=%@&idcard=%@&phone=%@&address=%@",[AppSettings sharedSettings].userid,self.ins_data[@"order_id"], self.ins_data[@"name"],self.ins_data[@"idcard"],self.ins_data[@"phone"],self.ins_data[@"address"]];
+    [[AppSettings sharedSettings].http get:url block:^(id json) {
+        if ([[AppSettings sharedSettings] isSuccess:json]){
+            OrderFinishedController *vc = [[OrderFinishedController alloc] initWithNibName:@"OrderFinishedController" bundle:Nil];
+            vc.content_data = json[@"result"];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,86 +82,96 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (indexPath.row==0){
+        cell.textLabel.text= @"姓名";
+        if (!_txtName){
+            _txtName = [[UITextField alloc] initWithFrame:CGRectMake(100, 4, 200, 36)];
+            [_txtName addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
+            _txtName.placeholder =@"姓名";
+            _txtName.returnKeyType = UIReturnKeyNext;
+            _txtName.clearButtonMode =UITextFieldViewModeAlways;
+            _txtName.tag =0;
+            [_txtName addTarget:self action:@selector(completeValue:) forControlEvents:UIControlEventEditingDidEndOnExit];
+        }
+        _txtName.text = self.ins_data[@"name"];
+        [_txtName removeFromSuperview];
+        [cell.contentView addSubview:_txtName];
+        
+    }else if (indexPath.row==1){
+        cell.textLabel.text= @"身份证号";
+        if (!_txtId){
+            _txtId = [[UITextField alloc] initWithFrame:CGRectMake(100, 4, 200, 36)];
+            [_txtId addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
+            _txtId.placeholder =@"身份证号";
+            _txtId.returnKeyType = UIReturnKeyNext;
+            _txtId.keyboardType = UIKeyboardTypeNamePhonePad;
+            _txtId.clearButtonMode =UITextFieldViewModeAlways;
+            _txtId.tag =1;
+            [_txtId addTarget:self action:@selector(completeValue:) forControlEvents:UIControlEventEditingDidEndOnExit];
+        }
+        _txtId.text = self.ins_data[@"idcard"];
+        [_txtId removeFromSuperview];
+        [cell.contentView addSubview:_txtId];
+    }else if (indexPath.row==2){
+        cell.textLabel.text= @"手机";
+        if (!_txtPhone){
+            _txtPhone = [[UITextField alloc] initWithFrame:CGRectMake(100, 4, 200, 36)];
+            [_txtPhone addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
+            _txtPhone.placeholder =@"手机";
+            _txtPhone.returnKeyType = UIReturnKeyNext;
+            _txtPhone.keyboardType = UIKeyboardTypeNamePhonePad;
+            _txtPhone.clearButtonMode =UITextFieldViewModeAlways;
+            _txtPhone.tag=2;
+            [_txtPhone addTarget:self action:@selector(completeValue:) forControlEvents:UIControlEventEditingDidEndOnExit];
+        }
+        _txtPhone.text = self.ins_data[@"phone"];
+        [_txtPhone removeFromSuperview];
+        [cell.contentView addSubview:_txtPhone];
+    }else{
+        cell.textLabel.text= @"地址";
+        if (!_txtAddress){
+            _txtAddress = [[UITextField alloc] initWithFrame:CGRectMake(100, 4, 200, 36)];
+            [_txtAddress addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
+            _txtAddress.placeholder =@"地址";
+            _txtAddress.returnKeyType = UIReturnKeyDone;
+            _txtAddress.clearButtonMode =UITextFieldViewModeAlways;
+            _txtAddress.tag=3;
+            [_txtAddress addTarget:self action:@selector(completeValue:) forControlEvents:UIControlEventEditingDidEndOnExit];
+        }
+        [_txtAddress removeFromSuperview];
+        _txtAddress.text = self.ins_data[@"address"];
+        [cell.contentView addSubview:_txtAddress];
     }
-    
-    // Configure the cell...
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)valueChanged:(UITextField *)sender{
+    int index = sender.tag;
+    self.ins_data[@[@"name",@"idcard",@"phone",@"address"][index]]= sender.text;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-
-    // Pass the selected object to the new view controller.
+-(void)completeValue:(UITextField *)sender{
+    int index = sender.tag;
+    if (index<3){
+        [@[_txtId,_txtPhone,_txtAddress][index] becomeFirstResponder];
+    }else{
+        [self finished];
+    }
     
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
- 
- */
-
 @end
+

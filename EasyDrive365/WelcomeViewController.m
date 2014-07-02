@@ -1,7 +1,7 @@
 //
 //  WelcomeViewController.m
 //  EasyDrive366
-//
+//  登录和注册页面
 //  Created by Fu Steven on 3/13/13.
 //  Copyright (c) 2013 Fu Steven. All rights reserved.
 //
@@ -43,12 +43,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/**
+ *  登录
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)login:(id)sender {
     LoginTableViewController *vc = [[LoginTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     //SignUpTableViewController *vc =[[SignUpTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+/**
+ *  注册
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)signup:(id)sender {
     
     SignUpTableViewController *vc =[[SignUpTableViewController alloc] initWithStyle:UITableViewStyleGrouped];

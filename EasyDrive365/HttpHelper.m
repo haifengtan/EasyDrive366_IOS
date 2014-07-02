@@ -46,7 +46,7 @@
     }
     
     NSString *url = [NSString stringWithFormat:@"%@&reload=%d",_url,reload];
-    NSLog(@"Reload url=%@",url);
+    
     [[HttpClient sharedHttp] get:url block:^(id json) {
        
         if ([[AppSettings sharedSettings] isSuccess:json]){

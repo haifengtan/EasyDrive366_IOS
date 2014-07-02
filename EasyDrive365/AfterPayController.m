@@ -12,6 +12,7 @@
 #import "OrderContentController.h"
 #import "OrderAccidentController.h"
 #import "AppSettings.h"
+#import "PingAnYiWaiXianViewController.h"
 
 @implementation AfterPayController
 
@@ -50,7 +51,7 @@
         [controller pushViewController:vc animated:YES];
     }else if ([next_form isEqualToString:@"add_pingan_yiwaixian"]){
         //完善平安意外险信息
-        OrderAccidentController *vc =[[OrderAccidentController alloc] initWithStyle:UITableViewStyleGrouped];
+        PingAnYiWaiXianViewController *vc =[[PingAnYiWaiXianViewController alloc] initWithStyle:UITableViewStyleGrouped];
         vc.ins_data = json[@"result"];
         vc.hasBack = hasBack;
         [controller pushViewController:vc animated:YES];

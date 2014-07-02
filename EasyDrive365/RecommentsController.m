@@ -19,6 +19,7 @@
 #import "AppDelegate.h"
 #import "SignupStep1ViewController.h"
 #import "TaskDispatch.h"
+#import "PingAnYiWaiXianViewController.h"
 
 @interface RecommentsController ()<BuyButtonDelegate,UIAlertViewDelegate>{
     //保险列表集合
@@ -249,6 +250,10 @@
     SignupStep0ViewController *vc = [[SignupStep0ViewController alloc] initWithStyle:UITableViewStyleGrouped];
     [self.navigationController pushViewController:vc animated:YES];
     
+//      PingAnYiWaiXianViewController *vc =[[PingAnYiWaiXianViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//    [self.navigationController pushViewController:vc animated:YES];
+
+    
 }
 
 /**
@@ -330,11 +335,12 @@
  *  头部图片点击处理
  */
 -(void)tapOnHeader{
+    
     id item = [_imageList objectAtIndex:_pager.currentPage];
     NSLog(@"%@",item);
     id obj = @{@"id":item[@"id"],@"page_id":item[@"page_id"],@"action_url":item[@"url"]};
     TaskDispatch *dispatch =[[TaskDispatch alloc] initWithController:self.navigationController task:obj];
     [dispatch pushToController];
-    
+
 }
 @end

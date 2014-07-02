@@ -162,12 +162,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    ServiceType *st = [_list objectAtIndex:indexPath.row];
+//    UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
+//    st.checked =!st.checked;
+//    if (st.checked)
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    else
+//        cell.accessoryType = UITableViewCellAccessoryNone;
     ServiceType *st = [_list objectAtIndex:indexPath.row];
-    UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
-    st.checked =!st.checked;
-    if (st.checked)
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    else
-        cell.accessoryType = UITableViewCellAccessoryNone;
+    NSString *key =_searchBar.text;
+    NSString *types =st.code;
+    if ([self.type isEqualToString:@"goods"]){
+        //商品查询
+        GoodsListController *vc = [[GoodsListController alloc] initWithStyle:UITableViewStylePlain];
+        vc.isSearch = YES;
+        vc.searchKey = key;
+        vc.searchTypes = types;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if ([self.type isEqualToString:@"provider"]){
+        //供应商查询
+        ProviderListController *vc = [[ProviderListController alloc] initWithStyle:UITableViewStylePlain];
+        vc.isSearch = YES;
+        vc.searchKey = key;
+        vc.searchTypes = types;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        //百科分类
+        ArticleListController *vc = [[ArticleListController alloc] initWithStyle:UITableViewStyleGrouped];
+        vc.isSearch = YES;
+        vc.searchKey = key;
+        vc.searchTypes = types;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+
 }
 @end

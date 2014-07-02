@@ -258,6 +258,7 @@
 		51F704961862CAAA00A17D24 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F704951862CAAA00A17D24 /* UserProfileView.xib */; };
 		51FD8A5F1892B29B00963987 /* SetupUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FD8A5E1892B29B00963987 /* SetupUserController.m */; };
 		84055EB2195C101C008DCFA6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 84055EB1195C101C008DCFA6 /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8441060A195D193B0034CF1C /* PingAnYiWaiXianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */; };
 		84611BA0195BC85800070BA8 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84611B93195BC85800070BA8 /* libBPush.a */; };
 		84611BA2195BC85800070BA8 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B99195BC85800070BA8 /* GzipCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84611BA3195BC85800070BA8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9B195BC85800070BA8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -898,6 +899,8 @@
 		51FD8A5E1892B29B00963987 /* SetupUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupUserController.m; sourceTree = "<group>"; };
 		84055EB0195C101C008DCFA6 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		84055EB1195C101C008DCFA6 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		84410607195D193B0034CF1C /* PingAnYiWaiXianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingAnYiWaiXianViewController.h; sourceTree = "<group>"; };
+		84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingAnYiWaiXianViewController.m; sourceTree = "<group>"; };
 		84611B92195BC85800070BA8 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		84611B93195BC85800070BA8 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		84611B97195BC85800070BA8 /* Base64Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Defines.h; sourceTree = "<group>"; };
@@ -1682,6 +1685,8 @@
 				51F0197E18DC078C00924778 /* JobDetailController.h */,
 				51F0197F18DC078C00924778 /* JobDetailController.m */,
 				51F0198018DC078C00924778 /* JobDetailController.xib */,
+				84410607195D193B0034CF1C /* PingAnYiWaiXianViewController.h */,
+				84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -2994,6 +2999,7 @@
 				E2CCBBD71817E2CF008DC8F6 /* AddCardStep2Controller.m in Sources */,
 				5197B78C187D32D200D906E2 /* NeedPayItemCell.m in Sources */,
 				51B0D64F18BDCF2100F3B33F /* InsuranceListCell.m in Sources */,
+				8441060A195D193B0034CF1C /* PingAnYiWaiXianViewController.m in Sources */,
 				5104AA5F184F3AF9004B4D21 /* TDBadgedCell.m in Sources */,
 				51EB24C418508A9A0031B0E7 /* FeedbackController2.m in Sources */,
 				51570C0018574E1B003655CC /* GoodsListController.m in Sources */,
