@@ -87,7 +87,7 @@
     _phone = @"";
     [[AppSettings sharedSettings].http get:url block:^(id json) {
         if ([[AppSettings sharedSettings] isSuccess:json]){
-            NSLog(@"%@",json);
+//            NSLog(@"%@",json);
             _number= json[@"result"][@"number"];
             _code = json[@"result"][@"code"];
             _activate_date =json[@"result"][@"activate_date"];
@@ -98,6 +98,8 @@
             _isActive = ![_code isEqual:@""];
             _phone=json[@"result"][@"phone"];
             isbind = 1;
+            
+            
             if ([json[@"result"][@"status"] isEqual:@"02"]){
                 _phoneStatus = @"解除绑定";
                 isbind = 0;

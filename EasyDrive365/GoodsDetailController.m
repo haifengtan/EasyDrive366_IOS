@@ -56,6 +56,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     //self.title = @"商品明细";
+    //设置图片滑动手势
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goLeft)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.tableView addGestureRecognizer:swipeLeft];

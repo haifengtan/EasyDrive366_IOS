@@ -80,6 +80,7 @@
     Browser2Controller *vc = [[Browser2Controller alloc] initWithNibName:@"Browser2Controller" bundle:nil];
     vc.url = [NSString stringWithFormat:@"http://m.4006678888.com:21000/index.php/prize/summary?userid=%d",[AppSettings sharedSettings].userid];
     vc.browser_title = @"我的积分";
+    NSLog(@"url=%@",vc.url);
     [_parent pushViewController:vc animated:YES];
     
 }

@@ -181,7 +181,6 @@
         }
     }else if ([cellCalssName isEqualToString:@"SwitchCell"]){
         
-        NSLog(@"%@",item);
         SwitchCell *aCell = (SwitchCell *)cell;
         aCell.lblTitle.text = item[@"label"];
         aCell.delegate = self;

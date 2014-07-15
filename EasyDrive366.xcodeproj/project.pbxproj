@@ -258,6 +258,7 @@
 		51F704961862CAAA00A17D24 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F704951862CAAA00A17D24 /* UserProfileView.xib */; };
 		51FD8A5F1892B29B00963987 /* SetupUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FD8A5E1892B29B00963987 /* SetupUserController.m */; };
 		84055EB2195C101C008DCFA6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 84055EB1195C101C008DCFA6 /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84301C5119751D3600F13FD4 /* NSNull+OVNatural.m in Sources */ = {isa = PBXBuildFile; fileRef = 84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */; };
 		8441060A195D193B0034CF1C /* PingAnYiWaiXianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */; };
 		84611BA0195BC85800070BA8 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84611B93195BC85800070BA8 /* libBPush.a */; };
 		84611BA2195BC85800070BA8 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B99195BC85800070BA8 /* GzipCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -899,6 +900,8 @@
 		51FD8A5E1892B29B00963987 /* SetupUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupUserController.m; sourceTree = "<group>"; };
 		84055EB0195C101C008DCFA6 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		84055EB1195C101C008DCFA6 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		84301C4F19751D3600F13FD4 /* NSNull+OVNatural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+OVNatural.h"; sourceTree = "<group>"; };
+		84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+OVNatural.m"; sourceTree = "<group>"; };
 		84410607195D193B0034CF1C /* PingAnYiWaiXianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingAnYiWaiXianViewController.h; sourceTree = "<group>"; };
 		84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingAnYiWaiXianViewController.m; sourceTree = "<group>"; };
 		84611B92195BC85800070BA8 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
@@ -1749,6 +1752,23 @@
 			name = Users;
 			sourceTree = "<group>";
 		};
+		84301C4D19751D3600F13FD4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84301C4E19751D3600F13FD4 /* NSNull */,
+			);
+			path = Utils;
+			sourceTree = SOURCE_ROOT;
+		};
+		84301C4E19751D3600F13FD4 /* NSNull */ = {
+			isa = PBXGroup;
+			children = (
+				84301C4F19751D3600F13FD4 /* NSNull+OVNatural.h */,
+				84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */,
+			);
+			path = NSNull;
+			sourceTree = "<group>";
+		};
 		84611B91195BC85800070BA8 /* BaiduPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -1824,6 +1844,7 @@
 		E2296D2F16B760EC00E332D9 /* EasyDrive366 */ = {
 			isa = PBXGroup;
 			children = (
+				84301C4D19751D3600F13FD4 /* Utils */,
 				84611B91195BC85800070BA8 /* BaiduPush */,
 				517CE3DB193AC5D4001A2DE2 /* MainTab */,
 				516C6434191CAF190035733B /* Uppay */,
@@ -2840,6 +2861,7 @@
 				512598B218866A5500967BDE /* Browser2Controller.m in Sources */,
 				E2EE657516C685F300ED1C73 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				51160F781861D92000AA15D3 /* CommentItemCell.m in Sources */,
+				84301C5119751D3600F13FD4 /* NSNull+OVNatural.m in Sources */,
 				514C90EA1895E272007FFFCC /* InsuranceStep4Controller.m in Sources */,
 				E2EE657616C685F300ED1C73 /* AFPropertyListRequestOperation.m in Sources */,
 				E2EE657716C685F300ED1C73 /* AFURLConnectionOperation.m in Sources */,

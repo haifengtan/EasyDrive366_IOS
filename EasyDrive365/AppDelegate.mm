@@ -336,8 +336,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [menu1 popToRootViewControllerAnimated:YES];
     [menu2 popToRootViewControllerAnimated:YES];
     [menu3 popToRootViewControllerAnimated:YES];
-   
-    //取消绑定  不接收通知
+       //取消绑定  不接收通知
     [BPush unbindChannel];
     
 }
