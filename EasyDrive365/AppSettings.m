@@ -143,8 +143,7 @@
 
 -(void)setDeviceToken:(NSString *)deviceToken{
     _deviceToken=[[deviceToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
-//    NSLog(@"deviceToken=%@",_deviceToken);
-    [self register_device_token];
+    [self sendPushInfo];
 }
 
 /**
@@ -160,12 +159,29 @@
         }];
     }
 }
+
+/**
+ *  提交推送信息到服务器
+ */
+-(void)sendPushInfo
+{
+    if (self.userid && self.userid>0 && _pushUserID){
+        HttpClient *http = [HttpClient sharedHttp];
+//        NSString *url = [NSString stringWithFormat:@"pushapi/add_pushinfo?memberId=%d&userId=%@&channelId=%@&equipment=4",self.userid,_pushUserID,_pushChannelID];
+        
+         NSString *url = [NSString stringWithFormat:@"pushapi/add_pushinfo?memberid=%d&userid=%@&channelid=%@&equipment=4",self.userid,_pushUserID,_pushChannelID];
+        [http get:url block:^(id json) {
+                NSLog(@"%@",json);
+        }];
+    }
+}
+
 -(void)login:(NSString *)username userid:(int)userid{
     self.userid = userid;
     self.firstName = username;
     self.isLogin = YES;
     [self save];
-    [self register_device_token];
+    [self sendPushInfo];
     self.isNeedRefresh=YES;
 }
 //http process

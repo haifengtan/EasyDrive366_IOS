@@ -141,9 +141,7 @@
  */
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    
-     [AppSettings sharedSettings].deviceToken=[deviceToken description];
-    
+//     [AppSettings sharedSettings].deviceToken=[deviceToken description];
     [BPush registerDeviceToken:deviceToken];
     [BPush bindChannel];
 }
@@ -168,17 +166,17 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 - (void) onMethod:(NSString*)method response:(NSDictionary*)data {
     NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
     if ([BPushRequestMethod_Bind isEqualToString:method]) {
-        NSString *appid = [res valueForKey:BPushRequestAppIdKey];
         NSString *userid = [res valueForKey:BPushRequestUserIdKey];
         NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
-//        NSString *requestid = [res valueForKey:BPushRequestRequestIdKey];
         int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
-    
+        
         if (returnCode == BPushErrorCode_Success) {
-            NSLog(@"appid=%@",appid);
-             NSLog(@"appid=%@",channelid);
-             NSLog(@"appid=%@",userid);
-           
+//            NSLog(@"appid=%@",appid);
+//             NSLog(@"appid=%@",channelid);
+//             NSLog(@"appid=%@",userid);
+            [AppSettings sharedSettings].pushChannelID=channelid;
+            [AppSettings sharedSettings].pushUserID=userid;
+             [AppSettings sharedSettings].deviceToken=[channelid description];
         }
     } else if ([BPushRequestMethod_Unbind isEqualToString:method]) {
         NSLog(@"解除绑定");

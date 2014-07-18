@@ -35,7 +35,10 @@
 @property (nonatomic) BOOL isFirst;
 @property (nonatomic) int userid;
 @property (nonatomic,retain) NSString *deviceToken;
-
+/**百度推送使用的userId*/
+@property (nonatomic,retain) NSString *pushUserID;
+/**百度推送使用的channelID*/
+@property (nonatomic,retain) NSString *pushChannelID;
 @property (nonatomic,retain) NSMutableDictionary *local_data;
 @property (nonatomic,retain) NSMutableArray *list;
 @property (nonatomic,retain) id latest_news;
