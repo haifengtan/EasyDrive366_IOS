@@ -179,7 +179,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
              [AppSettings sharedSettings].deviceToken=[channelid description];
         }
     } else if ([BPushRequestMethod_Unbind isEqualToString:method]) {
-        NSLog(@"解除绑定");
         int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
         if (returnCode == BPushErrorCode_Success) {
         }

@@ -97,7 +97,7 @@
     [super setupCell:cell indexPath:indexPath];
 }
 -(void)processSaving:(NSMutableDictionary *)parameters{
-    NSLog(@"%@",parameters);
+//    NSLog(@"%@",parameters);
     
     NSString *username=[parameters objectForKey:@"username"];
     if([@"" isEqualToString:username]){

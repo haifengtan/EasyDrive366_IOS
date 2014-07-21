@@ -163,7 +163,7 @@
  */
 -(void)load_data{
     if (self.data){
-        NSLog(@"%@",self.data);
+//        NSLog(@"%@",self.data);
         _list = [[NSMutableArray alloc] init];
         _sectionlist = [[NSMutableArray alloc] init];
         //productions
@@ -210,11 +210,14 @@
     NSLog(@"%@",notification);
     NSString *bounds = _payItem.useDiscount?self.data[@"bounds_num"]:@"0";
     NSString *url = [NSString stringWithFormat:@"order/order_payed?userid=%d&orderid=%@&orderpay=%f&bounds=%@&bankid=%@&account=%@",[AppSettings sharedSettings].userid,self.data[@"order_id"],_amount,bounds,_pay[@"bank_id"],_pay[@"bank_name"]];
+    //如果支付成功且信息正确 就跳转到订单详细页面   否则跳转到首页
     [[AppSettings sharedSettings].http get:url block:^(id json) {
         if ([[AppSettings sharedSettings] isSuccess:json]){
             AfterPayController *vc = [[AfterPayController alloc] init];
             [vc pushToNext:self.navigationController json:json hasBack:NO];
             
+        }else{
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }];
     
