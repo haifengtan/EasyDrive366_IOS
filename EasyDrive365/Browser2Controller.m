@@ -115,4 +115,16 @@
         
     }
 }
+
+/**
+ *  重新加载webView  转入转出积分后需要重新加载
+ *
+ *  @param animated <#animated description#>
+ */
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+      [self.webView reload];
+}
+
+
 @end

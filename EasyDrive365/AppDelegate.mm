@@ -31,6 +31,7 @@
 #import "MoreSettingsController.h"
 #import "BPush.h"
 #import "JSONKit.h"
+#import "InformationViewController.h"
 
 #define TAG_HOMEPAGE 0
 #define TAG_INSURANCE 1
@@ -38,7 +39,7 @@
 #define TAG_ARTICLE 3
 #define TAG_SETTINGS 4
 
-@interface AppDelegate()<WXApiDelegate,WeiboSDKDelegate>{
+@interface AppDelegate()<WXApiDelegate,WeiboSDKDelegate,UIAlertViewDelegate>{
     BMKMapManager *_mapManager;
     UINavigationController *menu0;
     UINavigationController *menu1;
@@ -62,17 +63,7 @@
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
    
-//    //推送
-//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
-   
-    //若app由远程通知启动 则做一些处理
-    if (launchOptions!=nil){
-        NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-        if (dictionary !=nil){
-            
-            [self addMessageFromRemoteNotification:dictionary];
-        }
-    }
+
     
     //[self setup_display];
     //带有状态栏
@@ -86,7 +77,6 @@
     _tabbarController =[[UITabBarController alloc] init];
     self.window.rootViewController = _tabbarController;
     [self.window makeKeyAndVisible];
-    
     
     //百度推送
     [BPush setupChannel:launchOptions];
@@ -130,6 +120,16 @@
     }else{
         [self createControllers];
     }
+    
+    //若app由远程通知启动 则做一些处理
+    if (launchOptions!=nil){
+        NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (dictionary !=nil){
+            
+            [self addMessageFromRemoteNotification:dictionary];
+        }
+    }
+    
     return YES;
 }
 
@@ -197,14 +197,25 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
    
     NSString *alert = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
     if (application.applicationState == UIApplicationStateActive) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通知"
-                                                            message:[NSString stringWithFormat:@"收到一条最新消息:\n%@", alert]
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"收到消息"
+                                                            message:alert
                                                            delegate:self
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil];
+                                                  cancelButtonTitle:@"查看"
+                                                  otherButtonTitles:@"取消",nil];
         [alertView show];
     }
+}
 
+/**
+ *  查看最新消息
+ *
+ *  @param alertView   <#alertView description#>
+ *  @param buttonIndex <#buttonIndex description#>
+ */
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+       [self showLatestNews];
+    }
 }
 
 /**
@@ -383,53 +394,26 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-//
-//#pragma mark - 推送
-//
-///**
-// *  注册token
-// *
-// *  @param application <#application description#>
-// *  @param deviceToken <#deviceToken description#>
-// */
-//-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-//    [AppSettings sharedSettings].deviceToken=[deviceToken description];
-//}
-//
-///**
-// *  注册token失败
-// *
-// *  @param application <#application description#>
-// *  @param error       <#error description#>
-// */
-//-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-//    NSLog(@"Failed to get token,error:%@",error);
-//}
-//
-///**
-// *  接收到通知
-// *
-// *  @param application <#application description#>
-// *  @param userInfo    <#userInfo description#>
-// */
-//-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-//    
-//    [self addMessageFromRemoteNotification:userInfo];
-//}
-
 /**
  *  处理接收到的通知
  *
  *  @param payload <#payload description#>
  */
 -(void)addMessageFromRemoteNotification:(NSDictionary *)payload{
-    NSLog(@"received notificaiton:%@",payload);
-    
+    [self showLatestNews];
 }
 
+/**
+ *  跳转到最新消息页面
+ */
+-(void)showLatestNews{
+    InformationViewController *vc = [[InformationViewController alloc] initWithNibName:@"InformationViewController" bundle:nil];
+    vc.title = @"最新消息";
+    [menu2 pushViewController:vc animated:YES];
+    _tabbarController.selectedIndex = 2;
+
+}
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    NSLog(@"%@",url);
     [self parse:url application:application];
 	return YES;
 }

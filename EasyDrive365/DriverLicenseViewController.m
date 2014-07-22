@@ -124,23 +124,25 @@
     [self processData:json];
 }
 -(void)initData{
-    _sections=@[@"提醒",@"计分情况",@"基本信息"];
+    _sections=@[@"基本信息",@"提醒",@"计分情况"];
     
     _items=@[
-    
-    
-    @[
-    @{@"name":@"体检日期",@"key":@"check_date",@"mode":@"",@"description":@"",@"vcname":@""},
-    @{@"name":@"换证日期",@"key":@"renew_date",@"mode":@"",@"description":@"",@"vcname":@""}],
-    @[@{@"name":@"计分到期日",@"key":@"mark_end_date",@"mode":@"",@"description":@"",@"vcname":@""},
-    
-    @{@"name":@"计分情况",@"key":@"mark",@"mode":@"",@"description":@"",@"vcname":@""}],
-    @[ @{@"name":@"证件号码",@"key":@"number",@"mode":@"add",@"description":@"",@"vcname":@""},
-    @{@"name":@"姓名",@"key":@"name",@"mode":@"add",@"description":@"",@"vcname":@""},
-    @{@"name":@"准驾车型",@"key":@"car_type",@"mode":@"add",@"description":@"",@"vcname":@"LicenseTypeViewController"},
-    @{@"name":@"初领日期",@"key":@"init_date",@"mode":@"add",@"description":@"",@"vcname":@"DatePickerViewController"},
-    @{@"name":@"有效期限",@"key":@"end_date",@"mode":@"",@"description":@"",@"vcname":@""}]
-    ];
+             @[ @{@"name":@"证件号码",@"key":@"number",@"mode":@"add",@"description":@"",@"vcname":@""},
+                @{@"name":@"姓名",@"key":@"name",@"mode":@"add",@"description":@"",@"vcname":@""},
+                @{@"name":@"准驾车型",@"key":@"car_type",@"mode":@"add",@"description":@"",@"vcname":@"LicenseTypeViewController"},
+                @{@"name":@"初领日期",@"key":@"init_date",@"mode":@"add",@"description":@"",@"vcname":@"DatePickerViewController"},
+                @{@"name":@"有效期限",@"key":@"end_date",@"mode":@"",@"description":@"",@"vcname":@""}],
+             
+             @[
+                 @{@"name":@"体检日期",@"key":@"check_date",@"mode":@"",@"description":@"",@"vcname":@""},
+                 @{@"name":@"换证日期",@"key":@"renew_date",@"mode":@"",@"description":@"",@"vcname":@""}],
+             
+             @[@{@"name":@"计分到期日",@"key":@"mark_end_date",@"mode":@"",@"description":@"",@"vcname":@""},
+               @{@"name":@"计分情况",@"key":@"mark",@"mode":@"",@"description":@"",@"vcname":@""}]
+             
+           
+             ];
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [_sections count];
