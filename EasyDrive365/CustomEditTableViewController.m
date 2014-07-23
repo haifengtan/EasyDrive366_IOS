@@ -192,7 +192,17 @@
        
         ChooseNextCell *aCell = (ChooseNextCell *)cell;
         aCell.lblTitle.text = item[@"label"];
-        aCell.lblDescription.text = item[@"value"];
+        NSString *value = item[@"value"];
+          //如果商业险 交强险日期返回空  默认设置为当前时间
+        if ( ![value isKindOfClass:[NSString class]] ) {
+            NSDate *  senddate=[NSDate date];
+            NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY-MM-dd"];
+            NSString *  locationString=[dateformatter stringFromDate:senddate];
+            value=locationString;
+        }
+        aCell.lblDescription.text = value;
+//        aCell.lblDescription.text = item[@"value"];
         //cell.accessoryType = UITableViewCellAccessoryCheckmark;
         NSString *icon = item[@"icon"];
         if (icon && ![icon isEqualToString:@""]){
@@ -223,6 +233,16 @@
     if ([item[@"cell"] isEqualToString:@"ChooseNextCell"]){
         NSString *vcname = item[@"placeholder"];
         NSString *value = item[@"value"];
+//        NSString *value = item[@"value"];
+        //如果商业险 交强险日期返回空  默认设置为当前时间
+        if ( ![value isKindOfClass:[NSString class]] ) {
+            NSDate *  senddate=[NSDate date];
+            NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY-MM-dd"];
+            NSString *  locationString=[dateformatter stringFromDate:senddate];
+            value=locationString;
+        }
+        
         if ([vcname isEqualToString:@"DatePickerViewController"]){
             DatePickerViewController *vc = [[DatePickerViewController alloc] initWithNibName:@"DatePickerViewController" bundle:nil];
             vc.keyname = item[@"key"];//@"init_date";

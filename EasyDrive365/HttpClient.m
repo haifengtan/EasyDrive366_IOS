@@ -72,7 +72,7 @@
         
         NSError *error = nil;
         id jsonResult =[NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&error];
-        //NSLog(@"get Result=%@",jsonResult);
+//        NSLog(@"get Result=%@",jsonResult);
         processJson(jsonResult);
         if (![[jsonResult objectForKey:@"status"] isEqualToString:@"success"]){
             NSString *message = @"发生异常，请稍后再试.";
