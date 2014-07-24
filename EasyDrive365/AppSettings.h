@@ -34,6 +34,8 @@
 @property (nonatomic) BOOL isLogin;
 @property (nonatomic) BOOL isFirst;
 @property (nonatomic) int userid;
+/**最后一次登录的用户id 用来处理多用户缓存问题*/
+@property (nonatomic) int lastUserid;
 @property (nonatomic,retain) NSString *deviceToken;
 /**百度推送使用的userId*/
 @property (nonatomic,retain) NSString *pushUserID;

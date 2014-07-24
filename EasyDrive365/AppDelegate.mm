@@ -194,15 +194,20 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
  *  @param userInfo    <#userInfo description#>
  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-   
+    NSLog(@"收到通知");
     NSString *alert = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
     if (application.applicationState == UIApplicationStateActive) {
+        NSLog(@"程序运行状态");
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"收到消息"
                                                             message:alert
                                                            delegate:self
                                                   cancelButtonTitle:@"查看"
                                                   otherButtonTitles:@"取消",nil];
         [alertView show];
+    }else{
+        NSLog(@"程序后台运行");
+        [self showLatestNews];
+
     }
 }
 

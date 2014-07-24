@@ -250,7 +250,7 @@
     _helper.url =[[_helper appSetttings] url_get_car_registration];
 }
 -(void)processData:(id)json{
-    NSLog(@"%@",json);
+//    NSLog(@"%@",json);
     _company = json[@"result"][@"company"];
     _phone = json[@"result"][@"phone"];
     id list = json[@"result"];

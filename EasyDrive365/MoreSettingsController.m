@@ -71,6 +71,20 @@
     self.navigationItem.rightBarButtonItem = nil;
    
 }
+
+/**
+ *  当切换用户登录后 需要更新显示内容
+ *
+ *  @param animated <#animated description#>
+ */
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    if (0!=[AppSettings sharedSettings].lastUserid && [AppSettings sharedSettings].lastUserid!=[AppSettings sharedSettings].userid) {
+        NSLog(@"的更新吖");
+        [self initData];
+    }
+}
+
 -(void)viewDidUnload{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewDidUnload];

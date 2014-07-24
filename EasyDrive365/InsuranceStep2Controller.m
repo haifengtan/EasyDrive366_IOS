@@ -62,6 +62,7 @@
     }
     
     [[AppSettings sharedSettings].http get:url block:^(id json) {
+        if (json) {
         NSString *r_date = json[@"result"][@"registration_date"];
         if ([r_date length]>10){
             r_date = [r_date substringToIndex:10];
@@ -92,6 +93,7 @@
                                                 @{@"count" : @3,@"list":items3,@"height":@44.0f}
                                                 ]];
         [self.tableView reloadData];
+             }
     }];
     
     self.title = @"第二步";
@@ -329,9 +331,6 @@
          return;
         
     }
-    
-    
-    
     
     NSString *path =[NSString stringWithFormat:@"ins/carins_confirm?userid=%d&car_id=%@&vin=%@&engine_no=%@&registration_date=%@&owner_name=%@&name=%@&license_id=%@&phone=%@&owner_license=%@&owner_phone=%@&policy_hoder=%@&policy_hoder_license=%@",[AppSettings sharedSettings].userid, car_id,vin,engine_no,registration_date,owner_name,name,license_id,phone,
                      owner_license,owner_phone,policy_hoder,policy_hoder_license];

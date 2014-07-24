@@ -37,6 +37,7 @@
 @implementation AppSettings
 @synthesize firstName=_firstName;
 @synthesize lastName=_lastName;
+@synthesize lastUserid=_lastUserid;
 @synthesize isLogin = _isLogin;
 @synthesize userid=_userid;
 @synthesize deviceToken=_deviceToken;
@@ -288,7 +289,7 @@
         NSString *key = [NSString stringWithFormat:@"%02d",i];
         Information *infor = [[Information alloc] init];
         id json = [self loadJsonBy:[NSString stringWithFormat:@"NavigationCell_%@",key]];
-        //NSLog(@"%@",json);
+//NSLog(@"%@",json);
         if (json){
             [infor setDataFromJsonWithKey:json key:key];
         }

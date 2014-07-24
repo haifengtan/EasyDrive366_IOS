@@ -226,6 +226,8 @@
 }
 - (IBAction)logout {
     [AppSettings sharedSettings].isLogin = FALSE;
+    //记录最后登录的用户id
+     [AppSettings sharedSettings].lastUserid=[AppSettings sharedSettings].userid;
     [AppSettings sharedSettings].userid = -1;
     [[AppSettings sharedSettings] save];
     /*
