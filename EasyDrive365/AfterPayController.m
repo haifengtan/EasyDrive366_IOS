@@ -25,7 +25,7 @@
  */
 -(void)pushToNext:(UINavigationController *)controller json:(id)json hasBack:(BOOL)hasBack{
     NSString *next_form =json[@"result"][@"next_form"];
-    NSLog(@"%@",json[@"result"]);
+//    NSLog(@"%@",json[@"result"]);
     if ([next_form isEqualToString:@"finished"]){
         //订单完成
         OrderFinishedController *vc = [[OrderFinishedController alloc] initWithNibName:@"OrderFinishedController" bundle:Nil];

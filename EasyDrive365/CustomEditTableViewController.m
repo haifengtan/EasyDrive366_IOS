@@ -130,7 +130,7 @@
     if ([cellCalssName isEqualToString:@"EditTextCell"]){
         textfield_count = [[_list objectAtIndex:indexPath.section][@"count"] intValue];
         
-//        NSLog(@"%@",item);
+        NSLog(@"%@",item);
         EditTextCell *aCell =(EditTextCell *)cell;
         aCell.keyLabel.text = item[@"label"];
         aCell.key = item[@"key"];

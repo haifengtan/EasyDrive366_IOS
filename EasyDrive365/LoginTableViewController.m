@@ -1,7 +1,7 @@
 //
 //  LoginTableViewController.m
 //  EasyDrive365
-//
+//  登录页面
 //  Created by Fu Steven on 3/8/13.
 //  Copyright (c) 2013 Fu Steven. All rights reserved.
 //
@@ -65,39 +65,42 @@
 
 -(void)initData{
     id items=@[
-            [[NSMutableDictionary alloc] initWithDictionary:
-             @{@"key" :@"username",
-               @"label":@"用户名：",
-               @"default":@"",
-               @"placeholder":@"手机号/车牌号",
-               @"ispassword":@"no",
-                @"value":_username,
-             @"cell":@"EditTextCell"  }],
-            [[NSMutableDictionary alloc] initWithDictionary:
-             @{@"key" :@"password",
-             @"label":@"密码：",
-             @"default":@"",
-             @"placeholder":@"",
-             @"ispassword":@"yes",
-             @"value":_password,
-             @"cell":@"EditTextCell"  }]
-    
-    ];
+               [[NSMutableDictionary alloc] initWithDictionary:
+                @{@"key" :@"username",
+                  @"label":@"用户名：",
+                  @"default":@"",
+                  @"placeholder":@"手机号/车牌号",
+                  @"ispassword":@"no",
+                  @"value":_username,
+                  @"cell":@"EditTextCell"  }],
+               [[NSMutableDictionary alloc] initWithDictionary:
+                @{@"key" :@"password",
+                  @"label":@"密码：",
+                  @"default":@"",
+                  @"placeholder":@"",
+                  @"ispassword":@"yes",
+                  @"value":_password,
+                  @"cell":@"EditTextCell"  }]
+               
+               ];
     id items2=@[
-        [[NSMutableDictionary alloc] initWithDictionary:
-         @{@"key" :@"remember",@"label":@"记住密码",@"default":@"",@"placeholder":@"",@"value":_remember,@"cell":@"SwitchCell" }],
-            [[NSMutableDictionary alloc] initWithDictionary: @{@"key" :@"choose_next",@"label":@"选择曾经登录用户",@"default":@"",@"placeholder":@"",@"value":@"",@"cell":@"ChooseNextCell" }]];
+                [[NSMutableDictionary alloc] initWithDictionary:
+                 @{@"key" :@"remember",@"label":@"记住密码",@"default":@"",@"placeholder":@"",@"value":_remember,@"cell":@"SwitchCell" }],
+                [[NSMutableDictionary alloc] initWithDictionary: @{@"key" :@"choose_next",@"label":@"选择曾经登录用户",@"default":@"",@"placeholder":@"",@"value":@"",@"cell":@"ChooseNextCell" }],
+                  [[NSMutableDictionary alloc] initWithDictionary: @{@"key" :@"choose_next",@"label":@"找回密码",@"default":@"",@"placeholder":@"",@"value":@"",@"cell":@"ChooseNextCell" }]
+                ];
+    
     _list=[NSMutableArray arrayWithArray: @[
-           @{@"count" : @1,@"list":@[@{@"cell":@"IntroduceCell"}],@"height":@100.0f},
-           @{@"count" : @2,@"list":items,@"height":@44.0f},
-           @{@"count" : @2,@"list":items2,@"height":@44.0f},
-           ]];
+                                            @{@"count" : @1,@"list":@[@{@"cell":@"IntroduceCell"}],@"height":@100.0f},
+                                            @{@"count" : @2,@"list":items,@"height":@44.0f},
+                                            @{@"count" : @2,@"list":items2,@"height":@44.0f},
+                                            ]];
 }
 -(void)setupCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath{
     [super setupCell:cell indexPath:indexPath];
 }
 -(void)processSaving:(NSMutableDictionary *)parameters{
-//    NSLog(@"%@",parameters);
+    //    NSLog(@"%@",parameters);
     
     NSString *username=[parameters objectForKey:@"username"];
     if([@"" isEqualToString:username]){
@@ -117,30 +120,30 @@
     }];
 }
 /*
-- (void)login:(NSString *)username password:(NSString *)password remember:(NSString *)remember {
-    //[self doLogin];
-    NSString *path  =[NSString stringWithFormat:@"api/login?username=%@&password=%@",username,password];
-    [[HttpClient sharedHttp] get:path block:^(id json) {
-        if (json){
-            NSString *status =[json objectForKey:@"status"];
-            if (status && [status isEqualToString:@"success"]){
-                //success login
-                
-                NSNumber *userid=[[json objectForKey:@"result"] objectForKey:@"id"];
-
-                [[AppSettings sharedSettings] login:username userid:[userid intValue]];
-                [[AppSettings sharedSettings] add_login:username password:password rememberPassword:remember];
-                [self.navigationController popToRootViewControllerAnimated:YES];
-                
-                
-            }else{
-                //self.txtUsername.text = [json objectForKey:@"message"];
-                //[[[UIAlertView alloc] initWithTitle:@"提示" message:[json objectForKey:@"message"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"继续", nil] show];
-            }
-        }
-    }];
-    
-}
+ - (void)login:(NSString *)username password:(NSString *)password remember:(NSString *)remember {
+ //[self doLogin];
+ NSString *path  =[NSString stringWithFormat:@"api/login?username=%@&password=%@",username,password];
+ [[HttpClient sharedHttp] get:path block:^(id json) {
+ if (json){
+ NSString *status =[json objectForKey:@"status"];
+ if (status && [status isEqualToString:@"success"]){
+ //success login
+ 
+ NSNumber *userid=[[json objectForKey:@"result"] objectForKey:@"id"];
+ 
+ [[AppSettings sharedSettings] login:username userid:[userid intValue]];
+ [[AppSettings sharedSettings] add_login:username password:password rememberPassword:remember];
+ [self.navigationController popToRootViewControllerAnimated:YES];
+ 
+ 
+ }else{
+ //self.txtUsername.text = [json objectForKey:@"message"];
+ //[[[UIAlertView alloc] initWithTitle:@"提示" message:[json objectForKey:@"message"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"继续", nil] show];
+ }
+ }
+ }];
+ 
+ }
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==2 && indexPath.row==1){

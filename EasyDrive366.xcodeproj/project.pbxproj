@@ -258,12 +258,17 @@
 		51F704961862CAAA00A17D24 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F704951862CAAA00A17D24 /* UserProfileView.xib */; };
 		51FD8A5F1892B29B00963987 /* SetupUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FD8A5E1892B29B00963987 /* SetupUserController.m */; };
 		84055EB2195C101C008DCFA6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 84055EB1195C101C008DCFA6 /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		840BF84019876E2E00521D7C /* BrandSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840BF83E19876E2E00521D7C /* BrandSelectViewController.m */; };
+		840BF84119876E2E00521D7C /* BrandSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840BF83F19876E2E00521D7C /* BrandSelectViewController.xib */; };
 		84301C5119751D3600F13FD4 /* NSNull+OVNatural.m in Sources */ = {isa = PBXBuildFile; fileRef = 84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */; };
 		8441060A195D193B0034CF1C /* PingAnYiWaiXianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */; };
 		84611BA0195BC85800070BA8 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84611B93195BC85800070BA8 /* libBPush.a */; };
 		84611BA2195BC85800070BA8 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B99195BC85800070BA8 /* GzipCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84611BA3195BC85800070BA8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9B195BC85800070BA8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84611BA4195BC85800070BA8 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9D195BC85800070BA8 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		847327181988831200AC4F3F /* address_bg_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 847327151988831200AC4F3F /* address_bg_press.png */; };
+		847327191988831300AC4F3F /* header_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 847327161988831200AC4F3F /* header_arrow_down.png */; };
+		8473271A1988831300AC4F3F /* header_arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 847327171988831200AC4F3F /* header_arrow_left.png */; };
 		84BB9BFE195BAA7F00D39DA5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BB9BFD195BAA7F00D39DA5 /* CoreTelephony.framework */; };
 		84BB9C00195BAA9900D39DA5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BB9BFF195BAA9900D39DA5 /* libz.dylib */; };
 		84BB9C02195BB34400D39DA5 /* BPushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BB9C01195BB34400D39DA5 /* BPushConfig.plist */; };
@@ -900,6 +905,9 @@
 		51FD8A5E1892B29B00963987 /* SetupUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupUserController.m; sourceTree = "<group>"; };
 		84055EB0195C101C008DCFA6 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		84055EB1195C101C008DCFA6 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		840BF83D19876E2E00521D7C /* BrandSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandSelectViewController.h; sourceTree = "<group>"; };
+		840BF83E19876E2E00521D7C /* BrandSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandSelectViewController.m; sourceTree = "<group>"; };
+		840BF83F19876E2E00521D7C /* BrandSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandSelectViewController.xib; sourceTree = "<group>"; };
 		84301C4F19751D3600F13FD4 /* NSNull+OVNatural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+OVNatural.h"; sourceTree = "<group>"; };
 		84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+OVNatural.m"; sourceTree = "<group>"; };
 		84410607195D193B0034CF1C /* PingAnYiWaiXianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingAnYiWaiXianViewController.h; sourceTree = "<group>"; };
@@ -913,6 +921,9 @@
 		84611B9B195BC85800070BA8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		84611B9C195BC85800070BA8 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		84611B9D195BC85800070BA8 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		847327151988831200AC4F3F /* address_bg_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address_bg_press.png; sourceTree = "<group>"; };
+		847327161988831200AC4F3F /* header_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_arrow_down.png; sourceTree = "<group>"; };
+		847327171988831200AC4F3F /* header_arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_arrow_left.png; sourceTree = "<group>"; };
 		84BB9BFD195BAA7F00D39DA5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84BB9BFF195BAA9900D39DA5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		84BB9C01195BB34400D39DA5 /* BPushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BPushConfig.plist; sourceTree = "<group>"; };
@@ -1334,6 +1345,9 @@
 				51604D8118FBFE80006C0BB9 /* BrandItemCell.h */,
 				51604D8218FBFE80006C0BB9 /* BrandItemCell.m */,
 				51604D8318FBFE80006C0BB9 /* BrandItemCell.xib */,
+				840BF83D19876E2E00521D7C /* BrandSelectViewController.h */,
+				840BF83E19876E2E00521D7C /* BrandSelectViewController.m */,
+				840BF83F19876E2E00521D7C /* BrandSelectViewController.xib */,
 			);
 			name = Insurance;
 			sourceTree = "<group>";
@@ -1795,6 +1809,16 @@
 			path = opensource;
 			sourceTree = "<group>";
 		};
+		847327141988831200AC4F3F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				847327151988831200AC4F3F /* address_bg_press.png */,
+				847327161988831200AC4F3F /* header_arrow_down.png */,
+				847327171988831200AC4F3F /* header_arrow_left.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		E2296D1A16B760EC00E332D9 = {
 			isa = PBXGroup;
 			children = (
@@ -1844,6 +1868,7 @@
 		E2296D2F16B760EC00E332D9 /* EasyDrive366 */ = {
 			isa = PBXGroup;
 			children = (
+				847327141988831200AC4F3F /* images */,
 				84301C4D19751D3600F13FD4 /* Utils */,
 				84611B91195BC85800070BA8 /* BaiduPush */,
 				517CE3DB193AC5D4001A2DE2 /* MainTab */,
@@ -2732,6 +2757,7 @@
 				E241CF05173BF3E600B1441D /* 0177@2x.png in Resources */,
 				E241CF08173BF42300B1441D /* 0052.png in Resources */,
 				E241CF09173BF42300B1441D /* 0052@2x.png in Resources */,
+				847327191988831300AC4F3F /* header_arrow_down.png in Resources */,
 				E2771F91174A321B0056E6F7 /* FeedbackViewController.xib in Resources */,
 				E254410F174D078E0015A84C /* IllegallyDetailViewController.xib in Resources */,
 				511567F318A83DA700784878 /* fenxiang.png in Resources */,
@@ -2758,11 +2784,14 @@
 				512598EB1888D17200967BDE /* w.png in Resources */,
 				512598E41888D17200967BDE /* kajuan@2x.png in Resources */,
 				E2F9C3C817E9F2F600D75359 /* 0300@2x.png in Resources */,
+				847327181988831200AC4F3F /* address_bg_press.png in Resources */,
 				E2F9C3CB17E9F30A00D75359 /* 0004.png in Resources */,
 				512598FE1888D32900967BDE /* c@2x.png in Resources */,
 				517CE3FC193AE0E9001A2DE2 /* xinxi.png in Resources */,
 				512598ED1888D17200967BDE /* weizhang.png in Resources */,
 				512599271888DB1D00967BDE /* main_menu in Resources */,
+				840BF84119876E2E00521D7C /* BrandSelectViewController.xib in Resources */,
+				8473271A1988831300AC4F3F /* header_arrow_left.png in Resources */,
 				51B26A211863355700C20C56 /* BoundHeader.xib in Resources */,
 				51F0A65F187BAB5900CC9A1D /* OrderQuantityCell.xib in Resources */,
 				E2F9C3CC17E9F30A00D75359 /* 0004@2x.png in Resources */,
@@ -2961,6 +2990,7 @@
 				E2771F90174A321B0056E6F7 /* FeedbackViewController.m in Sources */,
 				E254410E174D078E0015A84C /* IllegallyDetailViewController.m in Sources */,
 				E2B489F91761FAC300B8947D /* InfromationDetailViewController.m in Sources */,
+				840BF84019876E2E00521D7C /* BrandSelectViewController.m in Sources */,
 				E271A3EC17658235001E4D54 /* ArticleCommentViewController.m in Sources */,
 				E271A3F217658545001E4D54 /* AddCommentViewController.m in Sources */,
 				512598B718866F7700967BDE /* ArticleController.m in Sources */,

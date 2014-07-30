@@ -80,7 +80,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     if (0!=[AppSettings sharedSettings].lastUserid && [AppSettings sharedSettings].lastUserid!=[AppSettings sharedSettings].userid) {
-        NSLog(@"的更新吖");
         [self initData];
     }
 }

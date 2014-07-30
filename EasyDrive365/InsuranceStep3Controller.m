@@ -10,6 +10,7 @@
 #import "InsuranceStep4Controller.h"
 #import "AppSettings.h"
 #import "BrandSelectController.h"
+#import "BrandSelectViewController.h"
 
 @interface InsuranceStep3Controller (){
     id _brand_items;
@@ -46,7 +47,7 @@
 }
 -(void)brand_selected:(NSNotification *)sender{
     _brand_selected = [sender userInfo];
-    NSLog(@"%@",_brand_selected);
+//    NSLog(@"%@",_brand_selected);
     [[_list objectAtIndex:0][@"list"] objectAtIndex:0][@"value"] = _brand_selected[@"brand"];
 //    self.car_data[@"brand_id"]=_brand_selected[@"brand_id"];
     [[_list objectAtIndex:0][@"list"] objectAtIndex:1][@"value"]=_brand_selected[@"model"];
@@ -138,7 +139,8 @@
         NSString *vcname = item[@"placeholder"];
 
         if ([vcname isEqualToString:@"BrandSelectController"]){
-            BrandSelectController *vc =[[BrandSelectController alloc] initWithStyle:UITableViewStylePlain];
+//            BrandSelectController *vc =[[BrandSelectController alloc] initWithStyle:UITableViewStylePlain];
+             BrandSelectViewController *vc =[[BrandSelectViewController alloc]init];
             vc.list = _brand_items;
             vc.brand_id = self.car_data[@"brand_id"];
             vc.brand = self.car_data[@"brand"];
