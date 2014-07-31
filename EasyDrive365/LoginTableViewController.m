@@ -10,6 +10,7 @@
 #import "HttpClient.h"
 #import "AppSettings.h"
 #import "ChooseUserController.h"
+#import "ForgotPassword1TableViewController.h"
 
 @interface LoginTableViewController(){
     NSString *_username;
@@ -93,7 +94,7 @@
     _list=[NSMutableArray arrayWithArray: @[
                                             @{@"count" : @1,@"list":@[@{@"cell":@"IntroduceCell"}],@"height":@100.0f},
                                             @{@"count" : @2,@"list":items,@"height":@44.0f},
-                                            @{@"count" : @2,@"list":items2,@"height":@44.0f},
+                                            @{@"count" : @3,@"list":items2,@"height":@44.0f},
                                             ]];
 }
 -(void)setupCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath{
@@ -149,8 +150,10 @@
     if (indexPath.section==2 && indexPath.row==1){
         ChooseUserController *vc = [[ChooseUserController alloc] initWithNibName:@"ChooseUserController" bundle:nil];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section==2 && indexPath.row==2){
+        ForgotPassword1TableViewController *vc = [[ForgotPassword1TableViewController alloc]initWithStyle:UITableViewStyleGrouped];
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    NSLog(@"%@",indexPath);
     //[super tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 @end

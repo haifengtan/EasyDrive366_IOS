@@ -118,7 +118,6 @@
     _phone = @"";
     [[AppSettings sharedSettings].http get:url block:^(id json) {
         if ([[AppSettings sharedSettings] isSuccess:json]){
-            NSLog(@"%@",json);
             _number= json[@"result"][@"number"];
             _code = json[@"result"][@"code"];
             _activate_date =json[@"result"][@"activate_date"];
@@ -155,8 +154,6 @@
                 item[@"value"]=@"已经激活";
                 [self.tableView reloadData];
             }
-            
-            
             _isActive = YES;
         }else{
             

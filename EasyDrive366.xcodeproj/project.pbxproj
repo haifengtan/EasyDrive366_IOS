@@ -257,6 +257,8 @@
 		51F704941862CA8F00A17D24 /* UserProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F704931862CA8F00A17D24 /* UserProfileView.m */; };
 		51F704961862CAAA00A17D24 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F704951862CAAA00A17D24 /* UserProfileView.xib */; };
 		51FD8A5F1892B29B00963987 /* SetupUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FD8A5E1892B29B00963987 /* SetupUserController.m */; };
+		84026F12198A3FCD00978810 /* ForgotPassword1TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84026F11198A3FCD00978810 /* ForgotPassword1TableViewController.m */; };
+		84026F15198A445A00978810 /* ForgotPassword2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84026F14198A445A00978810 /* ForgotPassword2TableViewController.m */; };
 		84055EB2195C101C008DCFA6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 84055EB1195C101C008DCFA6 /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		840BF84019876E2E00521D7C /* BrandSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840BF83E19876E2E00521D7C /* BrandSelectViewController.m */; };
 		840BF84119876E2E00521D7C /* BrandSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840BF83F19876E2E00521D7C /* BrandSelectViewController.xib */; };
@@ -903,6 +905,10 @@
 		51F704951862CAAA00A17D24 /* UserProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
 		51FD8A5D1892B29B00963987 /* SetupUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupUserController.h; sourceTree = "<group>"; };
 		51FD8A5E1892B29B00963987 /* SetupUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupUserController.m; sourceTree = "<group>"; };
+		84026F10198A3FCD00978810 /* ForgotPassword1TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword1TableViewController.h; sourceTree = "<group>"; };
+		84026F11198A3FCD00978810 /* ForgotPassword1TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword1TableViewController.m; sourceTree = "<group>"; };
+		84026F13198A445A00978810 /* ForgotPassword2TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword2TableViewController.h; sourceTree = "<group>"; };
+		84026F14198A445A00978810 /* ForgotPassword2TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword2TableViewController.m; sourceTree = "<group>"; };
 		84055EB0195C101C008DCFA6 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		84055EB1195C101C008DCFA6 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		840BF83D19876E2E00521D7C /* BrandSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandSelectViewController.h; sourceTree = "<group>"; };
@@ -2191,6 +2197,10 @@
 				515F82B1191DA308004C459C /* SignupStep0ViewController.m */,
 				515F82B3191DA6A4004C459C /* SignStepBase.h */,
 				515F82B4191DA6A4004C459C /* SignStepBase.m */,
+				84026F10198A3FCD00978810 /* ForgotPassword1TableViewController.h */,
+				84026F11198A3FCD00978810 /* ForgotPassword1TableViewController.m */,
+				84026F13198A445A00978810 /* ForgotPassword2TableViewController.h */,
+				84026F14198A445A00978810 /* ForgotPassword2TableViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -2947,6 +2957,7 @@
 				E202E12816E0D7B400FDBD34 /* Insurance4ColumnsCell.m in Sources */,
 				51B9E11F1861E3AC005B9704 /* DoCommentController.m in Sources */,
 				E202E12E16E0DC4300FDBD34 /* InsuranceFooterView.m in Sources */,
+				84026F12198A3FCD00978810 /* ForgotPassword1TableViewController.m in Sources */,
 				E202E13316E0E3E000FDBD34 /* RecordCell.m in Sources */,
 				E202E13D16E1FCFD00FDBD34 /* DisplayTextCell.m in Sources */,
 				E202E14216E2005D00FDBD34 /* EditTextCell.m in Sources */,
@@ -2972,6 +2983,7 @@
 				E25AF0B116F9FED900E79057 /* CIViewController.m in Sources */,
 				51DA094118B841AD0048E9D2 /* BaseAfterController.m in Sources */,
 				E23BA0E017215E770049D2CB /* SwitchCell.m in Sources */,
+				84026F15198A445A00978810 /* ForgotPassword2TableViewController.m in Sources */,
 				513225251897E76600C3552A /* OrderFinishedController.m in Sources */,
 				E23BA0E617216B600049D2CB /* ChooseNextCell.m in Sources */,
 				E23BA0EC172170460049D2CB /* ChooseUserController.m in Sources */,
