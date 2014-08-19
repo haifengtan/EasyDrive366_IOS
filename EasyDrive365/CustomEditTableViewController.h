@@ -12,11 +12,21 @@
 
 @interface CustomEditTableViewController : UITableViewController{
     NSMutableArray *_list;
+    /**右侧按钮标题*/
     NSString *_saveButtonName;
 }
 @property (nonatomic) int taskid;
 -(void)init_setup;
+/**
+ *  初始化信息
+ */
 -(void)initData;
+/**
+ *  设置cell
+ *
+ *  @param cell      <#cell description#>
+ *  @param indexPath <#indexPath description#>
+ */
 -(void)setupCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
 -(void)processSaving:(NSMutableDictionary *)parameters;
 

@@ -213,19 +213,61 @@
                                        @{@"title":@"电话",@"detail":json[@"result"][@"phone"]},
                                        @{@"title":@"地址",@"detail":json[@"result"][@"address"]}]];
                 }else if ([_next_form isEqualToString:@"ins_contents"]){
-                    [_sectionList addObject:@"家庭财产险信息"];
+//                    [_sectionList addObject:@"家庭财产险信息"];
+//                    [_list addObject:@[
+//                                       @{@"title":@"被保险人姓名",@"detail":json[@"result"][@"name"]},
+//                                       @{@"title":@"电话",@"detail":json[@"result"][@"phone"]},
+//                                       @{@"title":@"地址",@"detail":json[@"result"][@"address"]},
+//                                       @{@"title":@"身份证号",@"detail":json[@"result"][@"idcard"]}]];
+                    [_sectionList addObject:@"保险信息"];
                     [_list addObject:@[
-                                       @{@"title":@"被保险人姓名",@"detail":json[@"result"][@"name"]},
-                                       @{@"title":@"电话",@"detail":json[@"result"][@"phone"]},
-                                       @{@"title":@"地址",@"detail":json[@"result"][@"address"]},
-                                       @{@"title":@"身份证号",@"detail":json[@"result"][@"idcard"]}]];
+                                       @{@"title":@"被保险人姓名",@"detail":json[@"result"][@"insured_name"]},
+                                       @{@"title":@"被保险人证件类型",@"detail":json[@"result"][@"insured_card_type"]},
+                                       @{@"title":@"被保险人证件号码",@"detail":json[@"result"][@"insured_idcard"]},
+                                       @{@"title":@"被保险人职业类别",@"detail":json[@"result"][@"insured_career_type"]},
+                                       @{@"title":@"被保险人电话",@"detail":json[@"result"][@"insured_phone"]},
+                                       @{@"title":@"被保险人地址",@"detail":json[@"result"][@"insured_address"]},
+                                       
+                                       @{@"title":@"受益人姓名",@"detail":json[@"result"][@"beneficiary_name"]},
+                                       @{@"title":@"收益人证件类型",@"detail":json[@"result"][@"beneficiary_card_type"]},
+                                       @{@"title":@"收益人证件号码",@"detail":json[@"result"][@"beneficiary_idcard"]},
+                                       @{@"title":@"收益人电话",@"detail":json[@"result"][@"beneficiary_phone"]},
+                                       @{@"title":@"收益人地址",@"detail":json[@"result"][@"beneficiary_address"]},
+                                       
+                                       @{@"title":@"投保人姓名",@"detail":json[@"result"][@"policy_holder_name"]},
+                                       @{@"title":@"投保人证件类型",@"detail":json[@"result"][@"policy_holder_card_type"]},
+                                       @{@"title":@"投保人证件号码",@"detail":json[@"result"][@"policy_holder_idcard"]},
+                                       @{@"title":@"投保人电话",@"detail":json[@"result"][@"policy_holder_phone"]},
+                                       @{@"title":@"投保人地址",@"detail":json[@"result"][@"policy_holder_address"]}
+                                       ]];
                 }else if ([_next_form isEqualToString:@"ins_accident"]){
                     [_sectionList addObject:@"意外伤害险信息"];
+//                    [_list addObject:@[
+//                                       @{@"title":@"被保险人姓名",@"detail":json[@"result"][@"name"]},
+//                                       @{@"title":@"身份证号",@"detail":json[@"result"][@"idcard"]},
+//                                       @{@"title":@"电话",@"detail":json[@"result"][@"phone"]},
+//                                       @{@"title":@"职业类别",@"detail":json[@"result"][@"typename"]},
+//                                       ]];
+//                    [_sectionList addObject:@"保险信息"];
                     [_list addObject:@[
-                                       @{@"title":@"被保险人姓名",@"detail":json[@"result"][@"name"]},
-                                       @{@"title":@"身份证号",@"detail":json[@"result"][@"idcard"]},
-                                       @{@"title":@"电话",@"detail":json[@"result"][@"phone"]},
-                                       @{@"title":@"职业类别",@"detail":json[@"result"][@"typename"]},
+                                       @{@"title":@"被保险人姓名",@"detail":json[@"result"][@"insured_name"]},
+                                       @{@"title":@"被保险人证件类型",@"detail":json[@"result"][@"insured_card_type"]},
+                                       @{@"title":@"被保险人证件号码",@"detail":json[@"result"][@"insured_idcard"]},
+                                       @{@"title":@"被保险人职业类别",@"detail":json[@"result"][@"insured_career_type"]},
+                                       @{@"title":@"被保险人电话",@"detail":json[@"result"][@"beneficiary_card_type"]},
+                                       @{@"title":@"被保险人地址",@"detail":json[@"result"][@"insured_address"]},
+                                       
+                                       @{@"title":@"受益人姓名",@"detail":json[@"result"][@"beneficiary_name"]},
+                                       @{@"title":@"收益人证件类型",@"detail":json[@"result"][@"beneficiary_card_type"]},
+                                       @{@"title":@"收益人证件号码",@"detail":json[@"result"][@"beneficiary_idcard"]},
+                                       @{@"title":@"收益人电话",@"detail":json[@"result"][@"beneficiary_phone"]},
+                                       @{@"title":@"收益人地址",@"detail":json[@"result"][@"beneficiary_address"]},
+                                       
+                                       @{@"title":@"投保人姓名",@"detail":json[@"result"][@"policy_holder_name"]},
+                                       @{@"title":@"投保人证件类型",@"detail":json[@"result"][@"policy_holder_card_type"]},
+                                       @{@"title":@"投保人证件号码",@"detail":json[@"result"][@"policy_holder_idcard"]},
+                                       @{@"title":@"投保人电话",@"detail":json[@"result"][@"policy_holder_phone"]},
+                                       @{@"title":@"投保人地址",@"detail":json[@"result"][@"policy_holder_address"]}
                                        ]];
                 }else if ([_next_form isEqualToString:@"finished"]){
                     [_sectionList addObject:@"附加信息"];
@@ -262,7 +304,8 @@
     }];
 }
 -(void)setup_exform{
-    if (_is_exform==1){
+    //未付款订单不可以编辑
+    if (_is_exform==1 && ![@"notpay" isEqualToString:_order_status]){
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleBordered target:self action:@selector(edit_exform)];
         
     }else{

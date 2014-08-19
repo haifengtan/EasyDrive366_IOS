@@ -407,7 +407,7 @@
             
             if (![oldVersion isEqual:_version[@"ver"]]){
                 NSString *msg = _version[@"msg"];
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:AppTitle message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:AppTitle message:msg delegate:self cancelButtonTitle:nil otherButtonTitles:@"更新", nil];
                 [alertView show];
             }else{
                 if (inSettings){
@@ -427,8 +427,8 @@
     }];
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%d",buttonIndex);
-    if (buttonIndex==1){
+//    NSLog(@"%d",buttonIndex);
+    if (buttonIndex==0){
         _isUpdating=YES;
         NSString *url = _version[@"ios"];
         

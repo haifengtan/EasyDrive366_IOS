@@ -19,6 +19,7 @@
 @property (nonatomic) NSString *confirmPassword;
 /**手机号*/
 @property (nonatomic) NSString *userPhone;
-
+/**用户id*/
+@property (nonatomic) NSString *userID;
 @property (nonatomic) NSString *username;
 @end

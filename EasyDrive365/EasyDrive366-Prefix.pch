@@ -26,11 +26,12 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 
 #define HostURL @"192.168.1.105"
-
+/**最新服务器地址*/
+//#define SERVERURL @"http://mapi.yijia366.cn:21000/index.php/"
 /**正式服务器地址*/
-#define SERVERURL @"http://m.4006678888.com:21000/index.php/"
+//#define SERVERURL @"http://m.4006678888.com:21000/index.php/"
 /**测试服务器地址*/
-//#define SERVERURL @"http://yijia366.oicp.net:21000/index.php/"
+#define SERVERURL @"http://yijia366.oicp.net:21000/index.php/"
 
 
 #define AppTitle @"易驾366"

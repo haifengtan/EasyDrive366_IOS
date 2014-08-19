@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"配送信息";
+    self.title = @"完善信息";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleBordered target:self action:@selector(finished)];
 }

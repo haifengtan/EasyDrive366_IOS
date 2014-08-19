@@ -87,8 +87,6 @@
             }else{
                 [SVProgressHUD dismiss];
             }
-        
-            
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

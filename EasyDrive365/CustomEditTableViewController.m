@@ -17,6 +17,8 @@
 #import "PickupData.h"
 #import "TextLabelCell.h"
 #import "ChooseNextImageCell.h"
+#import "JobSelectMainController.h"
+#import "CardTypeViewController.h"
 
 @interface CustomEditTableViewController ()<UITextFieldDelegate,SwitchCellDelegate,OneButtonCellDelegate,PickupData,EditTextCellTextChanged>{
     UITextField *_lastTextField;
@@ -54,7 +56,21 @@
  
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:_saveButtonName style:UIBarButtonItemStylePlain target:self action:@selector(done)];
     [self initData];
+    
+    //选择职业类别的通知
+     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(selected_job:) name:SELECTED_JOBITEM object:nil];
 }
+
+/**
+ *  选择职业类别
+ *
+ *  @param notification <#notification description#>
+ */
+-(void)selected_job:(NSNotification *)notification{
+    
+    [self setValueByKey:notification.userInfo[@"name"] key:@"insured_career_type"];
+}
+
 -(void)initData{
     /*
     id items=@[
@@ -242,17 +258,32 @@
             NSString *  locationString=[dateformatter stringFromDate:senddate];
             value=locationString;
         }
-        
+        //日期选择
         if ([vcname isEqualToString:@"DatePickerViewController"]){
             DatePickerViewController *vc = [[DatePickerViewController alloc] initWithNibName:@"DatePickerViewController" bundle:nil];
             vc.keyname = item[@"key"];//@"init_date";
             vc.delegate = self;
-            
             [self.navigationController pushViewController:vc animated:YES];
             if (value && ![value isEqualToString:@""])
             {
                 vc.value = value;
             }
+            
+            //职业类别选择
+        }else if([vcname isEqualToString:@"JobSelectMainController"]){
+            JobSelectMainController *vc = [[JobSelectMainController alloc] initWithStyle:UITableViewStyleGrouped];
+            vc.order_id =item[@"order_id"];
+//            vc.job_id =_job_id;
+            [self.navigationController pushViewController:vc animated:YES];
+            
+            //证件类型选择
+        }else if([vcname isEqualToString:@"CardTypeViewController"]){
+            
+            CardTypeViewController *vc = [[CardTypeViewController alloc] initWithNibName:@"CardTypeViewController" bundle:nil];
+            vc.keyname = item[@"key"];//@"init_date";
+            vc.delegate = self;
+            [self.navigationController pushViewController:vc animated:YES];
+            
         }else{
             LicenseTypeViewController *vc = [[LicenseTypeViewController alloc] initWithNibName:@"LicenseTypeViewController" bundle:nil];
             vc.delegate = self;

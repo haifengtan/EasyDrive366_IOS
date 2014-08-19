@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"配送信息";
+    self.title = @"完善信息";
     _job_id=0;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleBordered target:self action:@selector(finished)];
     _type = @{@"label":self.ins_data[@"type_name"],@"value":self.ins_data[@"type"]};

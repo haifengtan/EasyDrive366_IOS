@@ -9,9 +9,8 @@
 #import "InsuranceStep1Controller.h"
 #import "AppSettings.h"
 #import "InsuranceStep2Controller.h"
-
-
 #import "InsuranceStep7Controller.h"
+#import "OrderContentController2.h"
 
 @interface InsuranceStep1Controller (){
     
@@ -69,6 +68,7 @@
     vc.goods_id = self.goods_id;
     //InsuranceStep7Controller *vc =[[InsuranceStep7Controller alloc] initWithStyle:UITableViewStyleGrouped];
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

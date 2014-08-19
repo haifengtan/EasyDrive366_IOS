@@ -171,9 +171,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
         
         if (returnCode == BPushErrorCode_Success) {
-//            NSLog(@"appid=%@",appid);
-//             NSLog(@"appid=%@",channelid);
-//             NSLog(@"appid=%@",userid);
+     
             [AppSettings sharedSettings].pushChannelID=channelid;
             [AppSettings sharedSettings].pushUserID=userid;
              [AppSettings sharedSettings].deviceToken=[channelid description];

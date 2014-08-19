@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title=@"找回密码";
 }
 
 -(void)init_setup{
@@ -47,7 +48,7 @@
                                                                  @"ispassword":@"no",
                                                                  @"cell":@"EditTextCell",
                                                                  @"value":@"" }],
-                              ];
+               ];
     _list=[NSMutableArray arrayWithArray: @[
                                             @{@"count" : @1,@"list":@[@{@"cell":@"IntroduceCell"}],@"height":@100.0f},
                                             @{@"count" : @1,@"list":items,@"height":@44.0f},
@@ -70,16 +71,24 @@
         return;
     }
     
-    NSString *path =[NSString stringWithFormat:@"api/get_user_phone?userid=%@",username];
+    NSString *path =[NSString stringWithFormat:@"api/get_user_phone_by_userName?user_name=%@",username];
     
     [[HttpClient sharedHttp] get:path block:^(id json) {
-        NSLog(@"%@",json);
         if (json){
             NSString *status =[json objectForKey:@"status"];
             if (status && [status isEqualToString:@"success"]){
-               NSString*phone=json[@"result"][@"phone"];
+                //测试
+                NSString*phone=json[@"result"][@"user_phone"];
+                
+                NSString*userID=json[@"result"][@"user_id"];
+                //                 NSString*phone=json[@"result"];
+                //                NSString*userID=json[@"result"];
+                //
+                //                phone =@"15610050368";
+                //                userID=@"1601";
                 ForgotPassword2TableViewController *vc = [[ForgotPassword2TableViewController alloc]initWithStyle:UITableViewStyleGrouped];
                 vc.userPhone = phone;
+                vc.userID = userID;
                 [self.navigationController pushViewController:vc animated:YES];
             }else{
                 [[[UIAlertView alloc] initWithTitle:@"提示" message:[json objectForKey:@"message"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"继续", nil] show];

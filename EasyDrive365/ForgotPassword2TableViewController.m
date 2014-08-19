@@ -10,7 +10,7 @@
 #import "HttpClient.h"
 #import "AppSettings.h"
 #import "OneButtonCell.h"
-NSString *inform5=@"找回密码";
+//NSString *inform5=@"找回密码";
 @interface ForgotPassword2TableViewController (){
     NSTimer *_timer;
     int counter;
@@ -28,7 +28,8 @@ NSString *inform5=@"找回密码";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-      _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(downCount) userInfo:nil repeats:YES];
+    self.title=@"找回密码";
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(downCount) userInfo:nil repeats:YES];
 }
 
 -(void)init_setup{
@@ -70,8 +71,8 @@ NSString *inform5=@"找回密码";
     [super setupCell:cell indexPath:indexPath];
 }
 -(void)processSaving:(NSMutableDictionary *)parameters{
-    NSLog(@"%@",parameters);
-        NSString *password = [parameters objectForKey:@"userPassword"];
+    
+    NSString *password = [parameters objectForKey:@"userPassword"];
     if([@"" isEqualToString:password]){
         [[[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入有效密码" delegate:self cancelButtonTitle:nil otherButtonTitles:@"继续", nil] show];
         return;
@@ -82,43 +83,28 @@ NSString *inform5=@"找回密码";
         return;
     }
     
-     NSString *verificationCode = [parameters objectForKey:@"verificationCode"];
+    NSString *verificationCode = [parameters objectForKey:@"verificationCode"];
     if([@"" isEqualToString:verificationCode]){
         [[[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入有效验证码" delegate:self cancelButtonTitle:nil otherButtonTitles:@"继续", nil] show];
         return;
     }
     
-    NSString *path =[NSString stringWithFormat:@"api/signup?username=%@&password=%@",_username,password];
+    NSString *path =[NSString stringWithFormat:@"api/reset_user_pwd_v2?userid=%@&newpwd=%@&verification_code=%@",_userID,password,verificationCode];
     
-//    [[HttpClient sharedHttp] get:path block:^(id json) {
-//        NSLog(@"%@",json);
-//        if (json){
-//            NSString *status =[json objectForKey:@"status"];
-//            if (status && [status isEqualToString:@"success"]){
-//                
-//                NSNumber *userid=[[json objectForKey:@"result"] objectForKey:@"id"];
-//                
-//                [[AppSettings sharedSettings] login:_username userid:[userid intValue]];
-//                [[AppSettings sharedSettings] add_login:_username password:password rememberPassword:@"1"];
-//                //[[AppSettings sharedSettings] login:username userid:65];
-//                
-//                [self.navigationController popToRootViewControllerAnimated:YES];
-//            }else{
-////                self.lblInfor.text = [json objectForKey:@"message"];
-//                [[[UIAlertView alloc] initWithTitle:@"提示" message:[json objectForKey:@"message"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"继续", nil] show];
-//            }
-//        }
-//    }];
-    [AppSettings sharedSettings].userid =1601;
-    [[HttpClient sharedHttp] get:[[AppSettings sharedSettings] url_change_password:password oldPassword:password]  block:^(id json) {
-        if ([[AppSettings sharedSettings] isSuccess:json]){
-            [[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码修改成功！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
-            [self.navigationController popViewControllerAnimated:YES];
-        }else{
-            [[[UIAlertView alloc] initWithTitle:@"提示" message:json[@"message"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
-        }
+    [[HttpClient sharedHttp] get:path block:^(id json) {
         
+        if (json){
+            NSString *status =[json objectForKey:@"status"];
+            if (status && [status isEqualToString:@"success"]){
+                
+                [[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码修改成功！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }else{
+                [[[UIAlertView alloc] initWithTitle:@"提示" message:json[@"message"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
+            }
+        }
     }];
+  
 }
 
 -(void)buttonPress:(OneButtonCell *)sender{
@@ -126,7 +112,7 @@ NSString *inform5=@"找回密码";
     NSString *url = [NSString stringWithFormat:@"api/get_sms_code?userid=%d&phone=%@&isbind=%d",
                      1601,
                      _userPhone,
-                     0];
+                     3];
     [[HttpClient sharedHttp] get:url block:^(id json) {
         NSLog(@"%@",json);
         if ([[AppSettings sharedSettings] isSuccess:json]){

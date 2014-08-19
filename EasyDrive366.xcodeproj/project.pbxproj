@@ -257,6 +257,7 @@
 		51F704941862CA8F00A17D24 /* UserProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F704931862CA8F00A17D24 /* UserProfileView.m */; };
 		51F704961862CAAA00A17D24 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F704951862CAAA00A17D24 /* UserProfileView.xib */; };
 		51FD8A5F1892B29B00963987 /* SetupUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FD8A5E1892B29B00963987 /* SetupUserController.m */; };
+		840095B9198B7DED00C08DA8 /* OrderContentController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 840095B8198B7DED00C08DA8 /* OrderContentController2.m */; };
 		84026F12198A3FCD00978810 /* ForgotPassword1TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84026F11198A3FCD00978810 /* ForgotPassword1TableViewController.m */; };
 		84026F15198A445A00978810 /* ForgotPassword2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84026F14198A445A00978810 /* ForgotPassword2TableViewController.m */; };
 		84055EB2195C101C008DCFA6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 84055EB1195C101C008DCFA6 /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -264,10 +265,13 @@
 		840BF84119876E2E00521D7C /* BrandSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840BF83F19876E2E00521D7C /* BrandSelectViewController.xib */; };
 		84301C5119751D3600F13FD4 /* NSNull+OVNatural.m in Sources */ = {isa = PBXBuildFile; fileRef = 84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */; };
 		8441060A195D193B0034CF1C /* PingAnYiWaiXianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */; };
+		845E61A119920589006E62B0 /* OrderConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E61A019920589006E62B0 /* OrderConfirmationViewController.m */; };
 		84611BA0195BC85800070BA8 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84611B93195BC85800070BA8 /* libBPush.a */; };
 		84611BA2195BC85800070BA8 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B99195BC85800070BA8 /* GzipCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84611BA3195BC85800070BA8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9B195BC85800070BA8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84611BA4195BC85800070BA8 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 84611B9D195BC85800070BA8 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8465A4F219A3187C00FEE92D /* CardTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465A4F019A3187C00FEE92D /* CardTypeViewController.m */; };
+		8465A4F319A3187C00FEE92D /* CardTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8465A4F119A3187C00FEE92D /* CardTypeViewController.xib */; };
 		847327181988831200AC4F3F /* address_bg_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 847327151988831200AC4F3F /* address_bg_press.png */; };
 		847327191988831300AC4F3F /* header_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 847327161988831200AC4F3F /* header_arrow_down.png */; };
 		8473271A1988831300AC4F3F /* header_arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 847327171988831200AC4F3F /* header_arrow_left.png */; };
@@ -905,6 +909,8 @@
 		51F704951862CAAA00A17D24 /* UserProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
 		51FD8A5D1892B29B00963987 /* SetupUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupUserController.h; sourceTree = "<group>"; };
 		51FD8A5E1892B29B00963987 /* SetupUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupUserController.m; sourceTree = "<group>"; };
+		840095B7198B7DED00C08DA8 /* OrderContentController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderContentController2.h; sourceTree = "<group>"; };
+		840095B8198B7DED00C08DA8 /* OrderContentController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderContentController2.m; sourceTree = "<group>"; };
 		84026F10198A3FCD00978810 /* ForgotPassword1TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword1TableViewController.h; sourceTree = "<group>"; };
 		84026F11198A3FCD00978810 /* ForgotPassword1TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword1TableViewController.m; sourceTree = "<group>"; };
 		84026F13198A445A00978810 /* ForgotPassword2TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword2TableViewController.h; sourceTree = "<group>"; };
@@ -918,6 +924,8 @@
 		84301C5019751D3600F13FD4 /* NSNull+OVNatural.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+OVNatural.m"; sourceTree = "<group>"; };
 		84410607195D193B0034CF1C /* PingAnYiWaiXianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingAnYiWaiXianViewController.h; sourceTree = "<group>"; };
 		84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingAnYiWaiXianViewController.m; sourceTree = "<group>"; };
+		845E619F19920589006E62B0 /* OrderConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmationViewController.h; sourceTree = "<group>"; };
+		845E61A019920589006E62B0 /* OrderConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmationViewController.m; sourceTree = "<group>"; };
 		84611B92195BC85800070BA8 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		84611B93195BC85800070BA8 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		84611B97195BC85800070BA8 /* Base64Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Defines.h; sourceTree = "<group>"; };
@@ -927,6 +935,9 @@
 		84611B9B195BC85800070BA8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		84611B9C195BC85800070BA8 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		84611B9D195BC85800070BA8 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		8465A4EF19A3187C00FEE92D /* CardTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardTypeViewController.h; sourceTree = "<group>"; };
+		8465A4F019A3187C00FEE92D /* CardTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardTypeViewController.m; sourceTree = "<group>"; };
+		8465A4F119A3187C00FEE92D /* CardTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeViewController.xib; sourceTree = "<group>"; };
 		847327151988831200AC4F3F /* address_bg_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address_bg_press.png; sourceTree = "<group>"; };
 		847327161988831200AC4F3F /* header_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_arrow_down.png; sourceTree = "<group>"; };
 		847327171988831200AC4F3F /* header_arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_arrow_left.png; sourceTree = "<group>"; };
@@ -1710,6 +1721,10 @@
 				51F0198018DC078C00924778 /* JobDetailController.xib */,
 				84410607195D193B0034CF1C /* PingAnYiWaiXianViewController.h */,
 				84410608195D193B0034CF1C /* PingAnYiWaiXianViewController.m */,
+				840095B7198B7DED00C08DA8 /* OrderContentController2.h */,
+				840095B8198B7DED00C08DA8 /* OrderContentController2.m */,
+				845E619F19920589006E62B0 /* OrderConfirmationViewController.h */,
+				845E61A019920589006E62B0 /* OrderConfirmationViewController.m */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -2468,6 +2483,9 @@
 				E241CECA1733EB4600B1441D /* TextViewFooter.h */,
 				E241CECB1733EB4600B1441D /* TextViewFooter.m */,
 				E241CECE1733EB6900B1441D /* TextViewFooter.xib */,
+				8465A4EF19A3187C00FEE92D /* CardTypeViewController.h */,
+				8465A4F019A3187C00FEE92D /* CardTypeViewController.m */,
+				8465A4F119A3187C00FEE92D /* CardTypeViewController.xib */,
 			);
 			name = "Public Components";
 			sourceTree = "<group>";
@@ -2779,6 +2797,7 @@
 				5125991B1888D39F00967BDE /* k.png in Resources */,
 				E271A3F917658B8E001E4D54 /* CommentCell.xib in Resources */,
 				E27A7D5617B12A81009895E6 /* ActivateViewController.xib in Resources */,
+				8465A4F319A3187C00FEE92D /* CardTypeViewController.xib in Resources */,
 				5125991C1888D39F00967BDE /* k@2x.png in Resources */,
 				E27A7D5B17B12D75009895E6 /* ShowActivateViewController.xib in Resources */,
 				E2611B8517CB7CC500E92897 /* ShowLocationViewController.xib in Resources */,
@@ -2895,6 +2914,7 @@
 				E2EE657216C685F300ED1C73 /* AFHTTPRequestOperation.m in Sources */,
 				51A20AC818B453B9008054C4 /* TaskDispatch.m in Sources */,
 				E2EE657316C685F300ED1C73 /* AFImageRequestOperation.m in Sources */,
+				840095B9198B7DED00C08DA8 /* OrderContentController2.m in Sources */,
 				512599231888D62000967BDE /* ChooseNextImageCell.m in Sources */,
 				E2EE657416C685F300ED1C73 /* AFJSONRequestOperation.m in Sources */,
 				512598B218866A5500967BDE /* Browser2Controller.m in Sources */,
@@ -2995,6 +3015,7 @@
 				E241CECC1733EB4600B1441D /* TextViewFooter.m in Sources */,
 				E241CEE2173BE02B00B1441D /* CarHelpViewController.m in Sources */,
 				E241CEE7173BE26400B1441D /* VendorViewController.m in Sources */,
+				8465A4F219A3187C00FEE92D /* CardTypeViewController.m in Sources */,
 				E241CEEC173BE7E700B1441D /* ServiceNoteViewController.m in Sources */,
 				515F82B2191DA308004C459C /* SignupStep0ViewController.m in Sources */,
 				E241CEF6173BEA9E00B1441D /* IncomingViewController.m in Sources */,
@@ -3051,6 +3072,7 @@
 				51B9952F18913AC900C2DD5D /* NSString+SBJSON.m in Sources */,
 				E2E668A117DF6C1800AC85BA /* TPKeyboardAvoidingScrollView.m in Sources */,
 				E2F9C3DA17E9F5C900D75359 /* SearchShopController.m in Sources */,
+				845E61A119920589006E62B0 /* OrderConfirmationViewController.m in Sources */,
 				E2F9C3DD17E9FFB800D75359 /* SearchResultController.m in Sources */,
 				E2CB6D361815663700441F32 /* CardViewController.m in Sources */,
 				E23386481816BA0C0035C405 /* SingleCardViewController.m in Sources */,
@@ -3117,8 +3139,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: nanxi su";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: nanxi su";
+				CODE_SIGN_IDENTITY = "iPhone Developer: nanxi su (9W4KK2G345)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: nanxi su (9W4KK2G345)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3134,8 +3156,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "E738FB5A-BFFA-426F-8BF1-D78470045177";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E738FB5A-BFFA-426F-8BF1-D78470045177";
+				PROVISIONING_PROFILE = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3150,8 +3172,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: nanxi su";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: nanxi su";
+				CODE_SIGN_IDENTITY = "iPhone Developer: nanxi su (9W4KK2G345)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: nanxi su (9W4KK2G345)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -3161,8 +3183,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "E738FB5A-BFFA-426F-8BF1-D78470045177";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E738FB5A-BFFA-426F-8BF1-D78470045177";
+				PROVISIONING_PROFILE = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3171,8 +3193,8 @@
 		E2296D4A16B760EC00E332D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: nanxi su (9W4KK2G345)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: nanxi su (9W4KK2G345)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyDrive365/EasyDrive366-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -3189,8 +3211,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EasyDrive366;
-				PROVISIONING_PROFILE = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
+				PROVISIONING_PROFILE = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -3200,8 +3222,8 @@
 		E2296D4B16B760EC00E332D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: nanxi su (9W4KK2G345)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: nanxi su (9W4KK2G345)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyDrive365/EasyDrive366-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -3218,8 +3240,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EasyDrive366;
-				PROVISIONING_PROFILE = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46D95989-06FD-4B24-BE73-7F286BC4EF18";
+				PROVISIONING_PROFILE = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6D1C2D2-22B4-4E20-B51A-E3D4A26878FC";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

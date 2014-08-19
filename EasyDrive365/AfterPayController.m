@@ -12,15 +12,14 @@
 #import "OrderContentController.h"
 #import "OrderAccidentController.h"
 #import "AppSettings.h"
-#import "PingAnYiWaiXianViewController.h"
-
+#import "OrderContentController2.h"
 @implementation AfterPayController
 
 /**
  *  支付成功后的处理
  *
  *  @param controller <#controller description#>
- *  @param json       <#json description#>
+ *  @param json       json description
  *  @param hasBack    是否隐藏返回按钮
  */
 -(void)pushToNext:(UINavigationController *)controller json:(id)json hasBack:(BOOL)hasBack{
@@ -32,29 +31,36 @@
         vc.content_data= json[@"result"];
         [controller pushViewController:vc animated:YES];
     }else if ([next_form isEqualToString:@"address"]){
-        //跳转到填写配送信息页面
+        //实物商品跳转到填写配送信息页面
         OrderAddressController *vc =[[OrderAddressController alloc] initWithStyle:UITableViewStyleGrouped];
         vc.address_data = json[@"result"];
         vc.hasBack = hasBack;
         [controller pushViewController:vc animated:YES];
     }else if ([next_form isEqualToString:@"ins_contents"]){
-        //跳转到填写其他信息页面
-        OrderContentController *vc =[[OrderContentController alloc] initWithStyle:UITableViewStyleGrouped];
+        //家财险和移动保信息完善页面
+//        OrderContentController *vc =[[OrderContentController alloc] initWithStyle:UITableViewStyleGrouped];
+//        vc.ins_data = json[@"result"];
+//        vc.hasBack = hasBack;
+//        [controller pushViewController:vc animated:YES];
+        
+//        OrderAccidentController *vc =[[OrderAccidentController alloc] initWithStyle:UITableViewStyleGrouped];
+//        vc.ins_data = json[@"result"];
+//        vc.hasBack = hasBack;
+//        [controller pushViewController:vc animated:YES];
+//
+        
+        OrderContentController2 *vc =[[OrderContentController2 alloc] initWithStyle:UITableViewStyleGrouped];
         vc.ins_data = json[@"result"];
-        vc.hasBack = hasBack;
         [controller pushViewController:vc animated:YES];
     }else if ([next_form isEqualToString:@"ins_accident"]){
-        
+         //意外险信息完善页面
         OrderAccidentController *vc =[[OrderAccidentController alloc] initWithStyle:UITableViewStyleGrouped];
         vc.ins_data = json[@"result"];
         vc.hasBack = hasBack;
         [controller pushViewController:vc animated:YES];
-    }else if ([next_form isEqualToString:@"add_pingan_yiwaixian"]){
-        //完善平安意外险信息
-        PingAnYiWaiXianViewController *vc =[[PingAnYiWaiXianViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        vc.ins_data = json[@"result"];
-        vc.hasBack = hasBack;
-        [controller pushViewController:vc animated:YES];
+//        OrderContentController2 *vc =[[OrderContentController2 alloc] initWithStyle:UITableViewStyleGrouped];
+//        vc.ins_data = json[@"result"];
+//        [controller pushViewController:vc animated:YES];
     }
     
 }

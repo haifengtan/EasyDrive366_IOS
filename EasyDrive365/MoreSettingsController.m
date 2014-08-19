@@ -206,7 +206,7 @@
     
     
     _list=[NSMutableArray arrayWithArray: @[
-                                            @{@"count" : @3,@"list":items0,@"height":@44.0f,@"header":@"",@"footer":@""},
+                                            @{@"count" : @2,@"list":items0,@"height":@44.0f,@"header":@"",@"footer":@""},
                                             @{@"count" : @1,@"list":items1,@"height":@44.0f,@"header":@"",@"footer":@""},
                                             @{@"count" : @1,@"list":items2,@"height":@44.0f,@"header":@"",@"footer":@""},
                                             @{@"count" : @3,@"list":items3,@"height":@44.0f,@"header":@"",@"footer":@""},
